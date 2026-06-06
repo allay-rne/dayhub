@@ -1,0 +1,23 @@
+.todo-filter {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 24px;
+
+  border: var(--border-width-s) solid var(--color-border);
+  border-radius: var(--border-radius-m);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-l);
+
+
+  .field {
+    flex: 1;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}

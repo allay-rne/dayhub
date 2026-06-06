@@ -1,0 +1,28 @@
+<svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="12"
+    cy="12"
+    r="5"
+    stroke="yellow"
+    stroke-width="1.2"
+  />
+
+  <path d="M12 1V4" stroke="yellow" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M12 20V23" stroke="yellow" stroke-width="1.2" stroke-linecap="round"/>
+
+  <path d="M4.22 4.22L6.34 6.34" stroke="yellow" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M17.66 17.66L19.78 19.78" stroke="yellow" stroke-width="1.2" stroke-linecap="round"/>
+
+  <path d="M1 12H4" stroke="yellow" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M20 12H23" stroke="yellow" stroke-width="1.2" stroke-linecap="round"/>
+
+  <path d="M4.22 19.78L6.34 17.66" stroke="yellow" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M17.66 6.34L19.78 4.22" stroke="yellow" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
+
