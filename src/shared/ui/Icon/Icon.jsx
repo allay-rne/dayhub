@@ -11,6 +11,11 @@ import SearchIcon from '@/shared/assets/icons/search.svg?react'
 import TrashIcon from '@/shared/assets/icons/trash.svg?react'
 import StatsIcon from '@/shared/assets/icons/stats.svg?react'
 import PencilIcon from '@/shared/assets/icons/pencil.svg?react'
+import StarIvon from '@/shared/assets/icons/star.svg?react'
+import NotesIcon from '@/shared/assets/icons/notes.svg?react'
+import TagsIcon from '@/shared/assets/icons/tags.svg?react'
+import HearthIcon from '@/shared/assets/icons/hearth.svg?react'
+
 
 const icon = {
   sun: SunIcon,
@@ -24,6 +29,10 @@ const icon = {
   trash: TrashIcon,
   stats: StatsIcon,
   pencil: PencilIcon,
+  star: StarIvon,
+  notes: NotesIcon,
+  tags: TagsIcon,
+  hearth: HearthIcon,
 }
 
 const Icon = (props) => {

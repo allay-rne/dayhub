@@ -1,6 +1,4 @@
 .icon {
-  --iconSize: #{fluid-to-laptop(28, 14)};
-
   width: 28px;
   height: 28px;
 
@@ -15,8 +13,6 @@
 }
 
 .button__icon {
-  --iconSize: 24px;
-
-  width: var(--iconSize);
-  height: var(--iconSize);
+  width: 28px;
+  height:28px;
 }

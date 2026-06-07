@@ -7,6 +7,7 @@ const Hero = (props) => {
     img,
     title,
     subtitle,
+    children,
   } = props
 
   return (
@@ -14,14 +15,17 @@ const Hero = (props) => {
      className={classNames(className, 'hero')}
      style={{
        backgroundImage: `url(${img})`,
-       backgroundSize: "100%",
+       backgroundSize: "cover",
        backgroundPosition: 'center',
        backgroundRepeat: 'no-repeat',
    }}
    >
+     <div className="hero__inner">
      <div className="hero__content">
      <h1 className="hero__title">{title}</h1>
      <p className="hero__description">{subtitle}</p>
+     </div>
+       {children && <div className="hero__action">{children}</div>}
      </div>
    </section>
   )
