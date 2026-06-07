@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import useTasks from "@/entities/todo/model/useTasks.js";
-import Pano from "@/widgets/Pano/index.js";
 import TodoItem from "@/entities/todo/ui/TodoItem/index.js";
 import TodoSide from "@/widgets/TodoSide/index.js";
 import AddTask from "@/features/todo/AddTask/index.js";
 import TodoFilter from "@/features/todo/TodoFilter/index.js";
+import Hero from "@/shared/ui/Hero/index.js";
+import todoBanner from '@/shared/assets/image/Hero/todoLightHero.png'
 import "./Todo.scss";
 
 
@@ -26,7 +27,11 @@ const Todo = () => {
 
   return (
     <div>
-      <Pano />
+      <Hero
+       img={todoBanner}
+       title="My ToDo list"
+       subtitle="Order in affairs is the result in life"
+      />
       <div className="todo">
         <div className="todo__main">
           <AddTask

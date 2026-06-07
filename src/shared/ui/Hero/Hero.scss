@@ -1,4 +1,4 @@
-.pano {
+.hero {
   position: relative;
 
   display: flex;
@@ -8,18 +8,14 @@
 
   padding-top: fluid(195, 150);
   padding-bottom: fluid(131, 50);
-  padding-left: 100px;
-  background: url("../../shared/assets/image/Pano/todoBannerLight.png")
-  center / cover
-  no-repeat;
 
-  &__inner {
-
-    margin-top: -100px;
+  &__content {
+    padding-left: 100px;
+    margin-top: -40px;
   }
 
   &__title{
-    margin-bottom: fluid(14, 10);
+    margin-bottom: 2px;
 
     font-family: var(--font-family-base), sans-serif;
     font-size: var(--font-size-big);
@@ -27,15 +23,11 @@
   }
 
   &__description {
-    margin-bottom: fluid(50, 30);
+    margin-bottom: 80px;
 
     font-family: var(--font-family-base), sans-serif;
     font-size: var(--font-size-small);
 
-  }
-
-  &__body{
-    padding-bottom: fluid(50, 20);
   }
 
   &::after {
@@ -50,4 +42,3 @@
     background: linear-gradient(to top, var(--color-bg), transparent);
   }
 }
-
