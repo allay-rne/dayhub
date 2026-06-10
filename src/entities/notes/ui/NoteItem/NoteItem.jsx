@@ -1,5 +1,4 @@
 import './NoteItem.scss'
-import Icon from "@/shared/ui/Icon/index.js";
 import Button from "@/shared/ui/Button/index.js";
 
 
@@ -11,45 +10,53 @@ const NoteItem = (props) => {
     text,
     date,
     isFavorite,
-    onToggleFavorite,
+    onToggle,
+    onDelete,
+    onClick,
   } = props
 
 
   return (
     <li
       className="notes-item__item"
+      onClick={onClick}
     >
       <div className="notes-item__header">
         <div className="notes-item__left">
                   <span
                     className="notes-item__color"
-                    style={{backgroundColor: "#a8c5da"}}
+                    style={{backgroundColor: color}}
                   />
           <h2 className='notes-item__title'>{title}</h2>
         </div>
         <div className="notes-item__actions">
-          <Button
-            iconName='pencil'
-            iconPosition="after"
-            mode="transparent"
-            isLabelHidden
-            label="Edit"
-          />
           <Button
             iconName="close"
             iconPosition="after"
             mode="transparent"
             isLabelHidden
             label="Delete"
+            onClick={(event) => {
+              event.stopPropagation()
+              onDelete(id)
+            }}
           />
         </div>
       </div>
       <p className="notes-item__text">{text}</p>
       <div className="notes-item__footer">
         <data>{date}</data>
-        <Icon
-          name="star"
-          isFavorite
+        <Button
+          iconName="star"
+          iconPosition="after"
+          isFavorite={isFavorite}
+          mode="transparent"
+          isLabelHidden
+          label="Favorite"
+          onClick={(event) => {
+            event.stopPropagation()
+            onToggle(id)
+          }}
         />
       </div>
 

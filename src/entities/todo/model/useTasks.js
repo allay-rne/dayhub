@@ -51,6 +51,7 @@ const useTasks = () => {
   return {
     tasks,
     searchedTasks,
+
     handleAddTask,
     handleDeleteTask,
     handleToggleTask,

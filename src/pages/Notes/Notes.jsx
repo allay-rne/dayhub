@@ -1,64 +1,43 @@
-import Button from "@/shared/ui/Button/index.js";
-import todoBanner from "@/shared/assets/image/Hero/notesLightHero.png";
+import {useCallback, useState} from "react";
+import useNotes from "@/entities/notes/model/useNotes.js";
 import Hero from "@/shared/ui/Hero/index.js";
+import Button from "@/shared/ui/Button/index.js";
+import Field from "@/shared/ui/Field/index.js";
+import todoBanner from "@/shared/assets/image/Hero/notesLightHero.png";
 import NoteItem from "@/entities/notes/ui/NoteItem/index.js";
 import NoteSide from "@/widgets/NoteSide/index.js";
-import Field from "@/shared/ui/Field/index.js";
+import Modal from "@/shared/ui/Modal/index.js";
+import AddNote from "@/features/notes/AddNote/index.js";
 import './Notes.scss'
+
 
 const Notes = () => {
 
-  const noteItem = [
-    {
-      id: "note-id-1",
-      color: "light blue",
-      title: "note-1",
-      text: "This first note in Notes alallalalalalallalalalla ololoololololol",
-      date: "May 27, 2026",
-      isFavorite: true,
-    },
-    {
-      id: "note-id-2",
-      color: "light pink",
-      title: "note-2",
-      text: "This second note in Notes",
-      date: "Jun 7, 2026",
-      isFavorite: false,
-    },
-    {
-      id: "note-id-3",
-      color: "light red",
-      title: "note-3",
-      text: "This third note in Notes",
-      date: "Oct 1, 2025",
-      isFavorite: false,
-    },
+  const {
+    searchedNotes,
+    handleAddNotes,
+    handleDeleteNotes,
+    handleToggleFavorite,
+    handleSearchChange,
+    handleFilterChange,
+    handleEditNotes,
+  } = useNotes()
 
-    {
-      id: "note-id-4",
-      color: "light blue",
-      title: "note-4",
-      text: "This first note in Notes alallalalalalallalalalla ololoololololol",
-      date: "May 27, 2026",
-      isFavorite: true,
-    },
-    {
-      id: "note-id-5",
-      color: "light pink",
-      title: "note-5",
-      text: "This second note in Notes",
-      date: "Jun 7, 2026",
-      isFavorite: false,
-    },
-    {
-      id: "note-id-6",
-      color: "light red",
-      title: "note-6",
-      text: "This third note in Notes",
-      date: "Oct 1, 2025",
-      isFavorite: false,
-    },
-  ]
+  const [openModal, setOpenModal] = useState(false)
+  const  [selectedNote, setSelectedNote] = useState(null)
+
+
+  const handleOpenModal = useCallback(()=> {
+    setOpenModal(true)
+  }, [])
+  const handleCloseModal = useCallback(() => {
+    setOpenModal(false)
+    setSelectedNote(null)
+  }, [])
+  const handleEditNote = useCallback((note) => {
+    setSelectedNote(note)
+    setOpenModal(true)
+  }, [])
 
   return (
     <>
@@ -67,12 +46,17 @@ const Notes = () => {
         title="Notes"
         subtitle="Capture thoughts, ideas and everything in between"
       >
-        <Button label="+ New note" />
+        <Button
+          label="+ New note"
+          onClick = {handleOpenModal}
+        />
       </Hero>
       <section className="notes">
         <div className="notes__body">
 
-          <NoteSide />
+          <NoteSide
+            onFilterChange={handleFilterChange}
+          />
 
           <div className="notes__main">
               <Field
@@ -82,35 +66,37 @@ const Notes = () => {
                 placeholder="Search your notes..."
                 autoComplete="off"
                 type="search"
+                onChange={(event) => handleSearchChange(event.target.value)}
               />
 
             <main className="notes__list">
               <ul className="notes-item__list">
-                {noteItem.map(({
-                                 id,
-                                 color,
-                                 title,
-                                 text,
-                                 date,
-                                 isFavorite,
-                               }) => (
-                  <NoteItem
-                    key={id}
-                    id={id}
-                    color={color}
-                    title={title}
-                    text={text}
-                    date={date}
-                    isFavorite={isFavorite}
-                  />
-                ))}
+                  {searchedNotes.map((note)=> (
+                      <NoteItem
+                        key={note.id}
+                        id={note.id}
+                        color={note.color}
+                        title={note.title}
+                        text={note.text}
+                        date={note.date}
+                        isFavorite={note.isFavorite}
+                        onDelete={handleDeleteNotes}
+                        onToggle={handleToggleFavorite}
+                        onClick={() => handleEditNote(note)}
+                      />
+                    ))}
               </ul>
             </main>
           </div>
-
-
         </div>
       </section>
+      {openModal &&
+        <Modal>
+          <AddNote
+            note={selectedNote}
+            onClose={handleCloseModal}
+            onSave={selectedNote ? handleEditNotes : handleAddNotes}          />
+        </Modal>}
     </>
 
   )

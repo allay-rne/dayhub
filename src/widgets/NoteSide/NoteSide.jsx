@@ -5,7 +5,7 @@ import flowerImg from '@/shared/assets/image/flower.png'
 
 const NoteSide = (props) => {
   const {
-    className,
+    onFilterChange,
   } = props
 
   const notesFilter= [
@@ -13,31 +13,36 @@ const NoteSide = (props) => {
       icon: "notes",
       title: "All notes",
       number: 6,
+      filter: "all",
     },
     {
       icon: "star",
       title: "Favorites",
       number: 2,
+      filter: "favorites",
     },
     {
       icon: "tags",
       title: "Tags",
       number: 0,
+      filter: "tags",
     },
     {
       icon: "trash",
       title: "Trash",
       number: 0,
+      filter: "trash"
     },
   ]
 
   return (
     <aside className="notes-filter">
       <ul className="notes-filter__list">
-        {notesFilter.map(({icon, title, number})=>(
+        {notesFilter.map(({icon, title, number, filter})=>(
           <li
             className="notes-filter__item"
             key={title}
+            onClick={() => onFilterChange(filter)}
           >
             <div className="notes-filter__title">
               <Icon name={icon} />

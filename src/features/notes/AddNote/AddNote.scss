@@ -1,0 +1,57 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+
+  &__header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2px;
+ }
+
+  &__colors {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__color-option {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: var(--transition-fast);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--active {
+      outline: 1px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__body-text {
+    resize: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    width: 600px;
+    height: 400px
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

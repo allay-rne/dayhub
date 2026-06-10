@@ -15,6 +15,7 @@ const Button = (props) => {
     iconName,
     iconPosition,
     hasFillIcon,
+    isFavorite,
     ...rest
   } = props
 
@@ -29,6 +30,7 @@ const Button = (props) => {
     <Icon
       className="button__icon"
       name={iconName}
+      isFavorite={isFavorite}
       hasFill={hasFillIcon}
     />
   )

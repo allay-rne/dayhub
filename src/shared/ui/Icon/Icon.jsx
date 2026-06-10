@@ -40,6 +40,7 @@ const Icon = (props) => {
     className,
     name,
     ariaLabel,
+    isFavorite,
   } = props
 
   const Component = icon[name]
@@ -48,7 +49,9 @@ const Icon = (props) => {
 
   return (
     <span
-      className={classNames(className, 'icon')}
+      className={classNames(className, 'icon',
+        {'icon--favorite': isFavorite}
+      )}
       aria-label={ariaLabel}
     >
       <Component />
