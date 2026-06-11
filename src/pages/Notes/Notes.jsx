@@ -1,4 +1,4 @@
-import {useCallback, useState} from "react";
+import React, {useCallback, useState} from "react";
 import useNotes from "@/entities/notes/model/useNotes.js";
 import Hero from "@/shared/ui/Hero/index.js";
 import Button from "@/shared/ui/Button/index.js";
@@ -76,8 +76,9 @@ const Notes = () => {
               />
 
             <main className="notes__list">
-              <ul className="notes-item__list">
-                  {searchedNotes.map((note)=> (
+              {searchedNotes.length === 0
+                ? <div className='notes__empty'>Nothing here yet..</div>
+                : <ul className="notes-item__list"> {searchedNotes.map((note)=> (
                       <NoteItem
                         key={note.id}
                         id={note.id}
@@ -96,6 +97,7 @@ const Notes = () => {
                       />
                     ))}
               </ul>
+              }
             </main>
           </div>
         </div>

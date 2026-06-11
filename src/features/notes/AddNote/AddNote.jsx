@@ -17,13 +17,14 @@ const AddNote = (props) => {
     text,
     color,
     tags,
+    error,
     titleTags,
+    onInput,
     setTitleTags,
     handleAddTags,
     handleDeleteTag,
     setColor,
     isFavorite,
-    setTitle,
     setText,
     handleFavoriteMark,
     handleSave,
@@ -55,12 +56,14 @@ const AddNote = (props) => {
       </div>
       <div className="editor__body">
         <Field
+          className={classNames("editor__field field", { "editor__field--error": error })}
           id="note-title"
           placeholder="Write the name..."
           maxLength={14}
-          onChange={(event) => setTitle(event.target.value)}
+          onChange={(event) => onInput(event)}
           value={title}
         />
+        {error && <span className="editor__error">{error}</span>}
         <textarea
           className="editor__body-text"
           value={text}
