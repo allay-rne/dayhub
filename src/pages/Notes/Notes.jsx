@@ -14,6 +14,8 @@ import './Notes.scss'
 const Notes = () => {
 
   const {
+    filter,
+    notes,
     searchedNotes,
     handleAddNotes,
     handleDeleteNotes,
@@ -56,6 +58,8 @@ const Notes = () => {
 
           <NoteSide
             onFilterChange={handleFilterChange}
+            activeFilter={filter}
+            notes={notes}
           />
 
           <div className="notes__main">
@@ -79,6 +83,7 @@ const Notes = () => {
                         title={note.title}
                         text={note.text}
                         date={note.date}
+                        tags={note.tags}
                         isFavorite={note.isFavorite}
                         onDelete={handleDeleteNotes}
                         onToggle={handleToggleFavorite}

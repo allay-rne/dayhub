@@ -2,36 +2,46 @@ import './NoteSide.scss'
 import classNames from 'classnames'
 import Icon from "@/shared/ui/Icon/Icon.jsx";
 import flowerImg from '@/shared/assets/image/flower.png'
+import useNoteSide from "@/entities/notes/model/useNoteSide.js";
 
 const NoteSide = (props) => {
   const {
+    notes,
+    className,
     onFilterChange,
+    activeFilter,
   } = props
+
+  const {
+    allNotes,
+    favoriteNotes,
+    tagsNote,
+  } = useNoteSide(notes)
 
   const notesFilter= [
     {
       icon: "notes",
       title: "All notes",
-      number: 6,
+      number: allNotes,
       filter: "all",
     },
     {
       icon: "star",
       title: "Favorites",
-      number: 2,
+      number: favoriteNotes,
       filter: "favorites",
     },
     {
       icon: "tags",
       title: "Tags",
-      number: 0,
+      number: tagsNote,
       filter: "tags",
     },
     {
       icon: "trash",
       title: "Trash",
       number: 0,
-      filter: "trash"
+      filter: "trash",
     },
   ]
 
@@ -40,7 +50,9 @@ const NoteSide = (props) => {
       <ul className="notes-filter__list">
         {notesFilter.map(({icon, title, number, filter})=>(
           <li
-            className="notes-filter__item"
+            className={classNames(className, "notes-filter__item", {
+              'notes-filter__item--isActive': activeFilter === filter
+            })}
             key={title}
             onClick={() => onFilterChange(filter)}
           >

@@ -16,6 +16,11 @@ const AddNote = (props) => {
     title,
     text,
     color,
+    tags,
+    titleTags,
+    setTitleTags,
+    handleAddTags,
+    handleDeleteTag,
     setColor,
     isFavorite,
     setTitle,
@@ -52,6 +57,7 @@ const AddNote = (props) => {
         <Field
           id="note-title"
           placeholder="Write the name..."
+          maxLength={14}
           onChange={(event) => setTitle(event.target.value)}
           value={title}
         />
@@ -61,6 +67,40 @@ const AddNote = (props) => {
           placeholder="Decorate this place with thoughts..."
           onChange={(event) => setText(event.target.value)}
         />
+      </div>
+      <div className="editor__tags">
+        <Button
+          iconName="plus"
+          iconPosition="after"
+          mode="transparent"
+          isLabelHidden
+          label="Add"
+          onClick={handleAddTags}
+        />
+        <Field
+          id="note-tag"
+          placeholder="add tags..."
+          maxLength={10}
+          onChange={(event) => setTitleTags(event.target.value)}
+          value={titleTags}
+        />
+        {tags.map((tag) => (
+          <span
+            className="editor__tag"
+            key={tag}
+          >
+            {tag}
+          <Button
+            iconName="close"
+            iconPosition="after"
+            mode="transparent"
+            isLabelHidden
+            label="Delete"
+            onClick={() => handleDeleteTag(tag)}
+          />
+         </span>
+        ))}
+
       </div>
       <div className="editor__footer">
         <Button
@@ -72,6 +112,7 @@ const AddNote = (props) => {
           label="Favorite"
           onClick={handleFavoriteMark}
         />
+
         <div className="editor__footer-formating">
           Тут строка формата текста
         </div>

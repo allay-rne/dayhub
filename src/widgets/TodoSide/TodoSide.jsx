@@ -2,7 +2,7 @@ import './TodoSide.scss'
 import Button from "@/shared/ui/Button/index.js";
 import Icon from "@/shared/ui/Icon/Icon.jsx";
 import TodoItem from "@/entities/todo/ui/TodoItem/index.js";
-import useTodoSide from "@/widgets/TodoSide/model/useTodoSide.js";
+import useTodoSide from "@/entities/todo/model/useTodoSide.js";
 
 const TodoSide = (props) => {
   const {

@@ -29,6 +29,16 @@
       background-color: #ede5d8;
       color: var(--color-primary);
     }
+    &--isActive {
+      color: var(--color-primary);
+      background-color: #ede5d8;
+
+      &::after {
+        transform: scaleX(1);
+        background: white;
+        height: 3px;
+      }
+    }
   }
 
   &__title {

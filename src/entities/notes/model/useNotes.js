@@ -11,7 +11,7 @@ const useNotes = () => {
     setNotes([newNotes, ...notes])
   }, [notes])
   const handleDeleteNotes = useCallback((id) => {
-    setNotes(notes.filter((note) => note.id !== id))
+    setNotes(notes.map((note) => note.id === id ? {...note, isDeleted: true} : note))
   }, [notes])
   const handleToggleFavorite = useCallback((id) => {
     setNotes(notes.map((note) => note.id === id ? {...note, isFavorite: !note.isFavorite} : note))
@@ -32,12 +32,11 @@ const useNotes = () => {
     return notes.filter((note) =>
    filter === 'all' ? true
       : filter === 'favorites' ? note.isFavorite
-/*      : filter === 'tags' ? note.tags
-      : filter === 'trash' ? note.trash*/
+       : filter === 'tags' ? note.tags?.length > 0
+         /*     : filter === 'trash' ? note.trash*/
       : true
     )
   }, [notes, filter])
-
   const searchedNotes = useMemo(() => {
     return filteredNotes.filter((note) =>
     note.title.toLowerCase()
@@ -52,7 +51,7 @@ const useNotes = () => {
   return {
     notes,
     searchedNotes,
-
+    filter,
     handleAddNotes,
     handleDeleteNotes,
     handleToggleFavorite,
