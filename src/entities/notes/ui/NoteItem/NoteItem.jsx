@@ -14,6 +14,9 @@ const NoteItem = (props) => {
     date,
     tags = [],
     isFavorite,
+    isDeleted,
+    onFullDelete,
+    onRestore,
     onToggle,
     onDelete,
     onClick,
@@ -44,6 +47,22 @@ const NoteItem = (props) => {
           <h2 className='notes-item__title'>{title}</h2>
         </div>
         <div className="notes-item__actions">
+          {isDeleted === true ?
+            <Button
+              iconName="arrowBack"
+              iconPosition="after"
+              mode="transparent"
+              isLabelHidden
+              label="Back"
+              onClick={(event) => {
+                event.stopPropagation()
+                onRestore(id)
+              }}
+              onMouseDown={(event) => {
+                event.stopPropagation()
+              }}
+            /> : null }
+
           <Button
             iconName="close"
             iconPosition="after"
@@ -52,7 +71,7 @@ const NoteItem = (props) => {
             label="Delete"
             onClick={(event) => {
               event.stopPropagation()
-              onDelete(id)
+              isDeleted === true ? onFullDelete(id) : onDelete(id)
             }}
             onMouseDown={(event) => {
               event.stopPropagation()

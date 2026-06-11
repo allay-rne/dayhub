@@ -16,6 +16,7 @@ const NoteSide = (props) => {
     allNotes,
     favoriteNotes,
     tagsNote,
+    trashNote,
   } = useNoteSide(notes)
 
   const notesFilter= [
@@ -40,7 +41,7 @@ const NoteSide = (props) => {
     {
       icon: "trash",
       title: "Trash",
-      number: 0,
+      number: trashNote,
       filter: "trash",
     },
   ]

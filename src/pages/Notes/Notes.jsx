@@ -19,6 +19,8 @@ const Notes = () => {
     searchedNotes,
     handleAddNotes,
     handleDeleteNotes,
+    handleFullDeleteNote,
+    handleRestoreNote,
     handleToggleFavorite,
     handleSearchChange,
     handleFilterChange,
@@ -86,6 +88,9 @@ const Notes = () => {
                         tags={note.tags}
                         isFavorite={note.isFavorite}
                         onDelete={handleDeleteNotes}
+                        isDeleted={note.isDeleted}
+                        onFullDelete={handleFullDeleteNote}
+                        onRestore={handleRestoreNote}
                         onToggle={handleToggleFavorite}
                         onClick={() => handleEditNote(note)}
                       />

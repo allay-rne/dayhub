@@ -16,6 +16,7 @@ import NotesIcon from '@/shared/assets/icons/notes.svg?react'
 import TagsIcon from '@/shared/assets/icons/tags.svg?react'
 import HearthIcon from '@/shared/assets/icons/hearth.svg?react'
 import PlusIcon from '@/shared/assets/icons/plus.svg?react'
+import ArrowBackIcon from '@/shared/assets/icons/arrowBack.svg?react'
 
 
 const icon = {
@@ -35,6 +36,7 @@ const icon = {
   tags: TagsIcon,
   hearth: HearthIcon,
   plus: PlusIcon,
+  arrowBack: ArrowBackIcon,
 }
 
 const Icon = (props) => {

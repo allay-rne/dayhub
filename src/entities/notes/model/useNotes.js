@@ -27,13 +27,22 @@ const useNotes = () => {
       note.id === updatedNote.id ? updatedNote : note
     ))
   }, [notes])
+  const handleFullDeleteNote = useCallback((id) => {
+    const isConfirmed = window.confirm('Удалить заметку навсегда?')
+    if (isConfirmed) {
+      setNotes(notes.filter((note) => note.id !== id))
+    }
+  }, [notes])
+  const handleRestoreNote = useCallback((id) => {
+        setNotes(notes.map((note) => note.id === id ? {...note, isDeleted: false} : note))
+  }, [notes])
 
   const filteredNotes = useMemo(() => {
     return notes.filter((note) =>
-   filter === 'all' ? true
-      : filter === 'favorites' ? note.isFavorite
-       : filter === 'tags' ? note.tags?.length > 0
-         /*     : filter === 'trash' ? note.trash*/
+   filter === 'all' ? note.isDeleted !== true
+      : filter === 'favorites' ? note.isFavorite && note.isDeleted !== true
+       : filter === 'tags' ? note.tags?.length > 0 && note.isDeleted !== true
+         : filter === 'trash' ? note.isDeleted === true
       : true
     )
   }, [notes, filter])
@@ -54,6 +63,8 @@ const useNotes = () => {
     filter,
     handleAddNotes,
     handleDeleteNotes,
+    handleFullDeleteNote,
+    handleRestoreNote,
     handleToggleFavorite,
     handleSearchChange,
     handleFilterChange,
