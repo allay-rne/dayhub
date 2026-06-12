@@ -8,7 +8,7 @@ const Button = (props) => {
     type = 'button',
     href,
     target,
-    /*'' - default | 'transparent' | 'filter' | 'danger'*/
+    /*'' - default | 'transparent' | 'filter' | 'danger' | 'hero'*/
     mode = '',
     label,
     isLabelHidden = false,

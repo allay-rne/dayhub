@@ -36,7 +36,6 @@ const useTasks = () => {
       filter === 'all' ? true
         : task.priority.toLowerCase() === filter)
   }, [tasks, filter])
-
   const searchedTasks = useMemo(() => {
     return filteredTasks.filter((task) =>
       task.title.toLowerCase()

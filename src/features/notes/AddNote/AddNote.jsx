@@ -59,7 +59,7 @@ const AddNote = (props) => {
           className={classNames("editor__field field", { "editor__field--error": error })}
           id="note-title"
           placeholder="Write the name..."
-          maxLength={14}
+          maxLength={20}
           onChange={(event) => onInput(event)}
           value={title}
         />
@@ -116,9 +116,6 @@ const AddNote = (props) => {
           onClick={handleFavoriteMark}
         />
 
-        <div className="editor__footer-formating">
-          Тут строка формата текста
-        </div>
         <Button
           label="Save your thoughts"
           onClick={handleSave}

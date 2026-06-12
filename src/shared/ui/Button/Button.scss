@@ -56,4 +56,10 @@
     background-color: var(--color-danger);
     font-weight: var(--font-weight-regular)
   }
+
+  &--hero {
+    padding: 18px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
 }

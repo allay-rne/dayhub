@@ -53,6 +53,7 @@ const Notes = () => {
         <Button
           label="+ New note"
           onClick = {handleOpenModal}
+          mode="hero"
         />
       </Hero>
       <section className="notes">

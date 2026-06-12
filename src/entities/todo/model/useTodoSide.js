@@ -1,6 +1,5 @@
 import {useState} from "react";
 
-
 const useTodoSide = (tasks) => {
   const [selectedDate, setSelectedDate] = useState('')
   const [isCalendarOpen, setIsCalendarOpen] = useState(false)

@@ -1,7 +1,7 @@
 import './NoteSide.scss'
 import classNames from 'classnames'
 import Icon from "@/shared/ui/Icon/Icon.jsx";
-import flowerImg from '@/shared/assets/image/flower.png'
+import flowerImg from '@/shared/assets/image/NotesWidgets/flower.png'
 import useNoteSide from "@/entities/notes/model/useNoteSide.js";
 
 const NoteSide = (props) => {

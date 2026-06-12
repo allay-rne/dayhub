@@ -3,6 +3,7 @@ import {formatNoteDate} from "@/shared/lib/date.js";
 
 
   const useAddNote = (onSave, onClose, note) => {
+
   const [title, setTitle] = useState(note?.title || '')
   const [text, setText] = useState(note?.text || '')
   const [isFavorite, setIsFavorite] = useState(note?.isFavorite || false)
