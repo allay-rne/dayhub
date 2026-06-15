@@ -54,14 +54,17 @@ const WeatherHero = (props) => {
                 fetchWeather(event.target.value)
               }}
             >
-              {CITIES.map((city) => {
-                return <option key={city}>{city}</option>
+              {CITIES.map(({city, country}) => {
+                return <option key={city} value={city}>
+                  {city}, {country}
+                </option>
               })}
             </select>
             <div className="weather-hero__weather">
               <div className="weather-hero__weather-today">
                 <div className="weather-hero__weather-temp"> {temp}°C </div>
                 <Icon
+                  className="weather-hero__icon-sun"
                   name="sun"
                 />
               </div>
