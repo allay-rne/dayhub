@@ -11,17 +11,18 @@
   }
 
   &__item {
-    background-color: var(--color-surface);
-    border-radius: var(--border-radius-s);
-    box-shadow: var(--shadow-l);
-    padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 4px;
 
-    break-inside: avoid;
+    padding: 16px;
     margin-bottom: 16px;
     height: 224px;
+    break-inside: avoid;
+
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-s);
+    box-shadow: var(--shadow-l);
 
     overflow: hidden;
     transition: var(--transition-fast);

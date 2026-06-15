@@ -36,6 +36,10 @@ const useWeather = () => {
       Math.round(weather?.wind?.speed),
     [weather])
 
+  const windDeg = useMemo(() =>
+    weather?.wind?.deg,
+  [weather])
+
   const weatherDesc = useMemo(() =>
     weather?.weather[0]?.description,
     [weather])
@@ -58,6 +62,7 @@ const useWeather = () => {
     humidity,
     feels,
     windSpeed,
+    windDeg,
     weatherDesc,
     weatherName,
     fetchWeather,

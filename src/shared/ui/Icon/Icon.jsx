@@ -17,6 +17,12 @@ import TagsIcon from '@/shared/assets/icons/tags.svg?react'
 import HearthIcon from '@/shared/assets/icons/hearth.svg?react'
 import PlusIcon from '@/shared/assets/icons/plus.svg?react'
 import ArrowBackIcon from '@/shared/assets/icons/arrowBack.svg?react'
+import CloudIcon from '@/shared/assets/icons/cloud.svg?react'
+import WindIcon from '@/shared/assets/icons/wind.svg?react'
+import NavigationIcon from '@/shared/assets/icons/navigation.svg?react'
+import HumidityIcon from '@/shared/assets/icons/humidity.svg?react'
+import TempIcon from '@/shared/assets/icons/temp.svg?react'
+
 
 
 const icon = {
@@ -37,6 +43,12 @@ const icon = {
   hearth: HearthIcon,
   plus: PlusIcon,
   arrowBack: ArrowBackIcon,
+  cloud: CloudIcon,
+  wind: WindIcon,
+  navigation: NavigationIcon,
+  humidity: HumidityIcon,
+  temp: TempIcon,
+
 }
 
 const Icon = (props) => {

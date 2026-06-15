@@ -1,3 +1,22 @@
 .weather-overview {
+  z-index: 100;
+  position: relative;
+  top: -350px;
 
+  &__card {
+    display: flex;
+  }
+
+  &__card-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 0 50px;
+  }
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: var(--font-weight-semibold);
 }

@@ -1,16 +1,37 @@
 import './OverviewCard.scss'
-import classNames from 'classnames'
+import Icon from "@/shared/ui/Icon/Icon.jsx";
 
 const OverviewCard = (props) => {
   const {
-    className,
+    name,
+    title,
+    value,
+    subtitle,
+    children,
   } = props
 
   return (
-    <div
-      className={classNames(className, 'overview-card')}
-    >
-      OverviewCard
+    <div className="overview-card">
+      <div className="overview-card__header">
+        <div className="overview-card__icon-wrapper">
+        <Icon
+          name={name}
+        />
+        </div>
+        <h3 className="overview-card__header-title">{title}</h3>
+      </div>
+
+      <div className="overview-card__main">
+        <p className="overview-card__main-value">{value}</p>
+        <p className="overview-card__main-subtitle">{subtitle}</p>
+      </div>
+
+      <div className="overview-card__footer">
+        <div className="overview-card__footer-children">{children}</div>
+      </div>
+
     </div>
   )
 }
+
+export default OverviewCard
