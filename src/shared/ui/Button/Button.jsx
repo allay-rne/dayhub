@@ -48,7 +48,7 @@ const Button = (props) => {
     >
       {iconPosition === 'before' && iconComponent}
       {!isLabelHidden && (
-        <span className="button__label" >{label}</span>
+        <span className="button__label">{label}</span>
       )}
       {iconPosition === 'after' && iconComponent}
     </Component>

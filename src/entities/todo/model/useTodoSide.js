@@ -10,7 +10,7 @@ const useTodoSide = (tasks) => {
 
 
   const today = new Date()
-    .toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+    .toLocaleDateString('en-US', {month: 'short', day: 'numeric'})
 
   const completedCount = tasks.filter((task) => task.isDone === true).length
   const pendingCount = tasks.filter((task) => !task.isDone).length
@@ -22,8 +22,11 @@ const useTodoSide = (tasks) => {
   const result = tasks.length === 0
     ? 0 : completedCount * 100 / tasks.length
   const displayTasks = selectedDate
-    ? tasks.filter((task)=>
-      task.date === new Date(selectedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }))
+    ? tasks.filter((task) =>
+      task.date === new Date(selectedDate).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric'
+      }))
     : todayTasks
 
   const statsItem = [

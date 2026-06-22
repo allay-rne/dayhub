@@ -5,11 +5,11 @@
   padding: 8px;
 
   &__header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 2px;
- }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+  }
 
   &__colors {
     display: flex;
@@ -73,6 +73,7 @@
     button {
       width: 16px !important;
       height: 16px !important;
+
       svg {
         width: 10px;
         height: 10px;

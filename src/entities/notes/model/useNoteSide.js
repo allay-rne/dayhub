@@ -1,5 +1,3 @@
-
-
 const useNotesSide = (notes) => {
 
   const allNotes = notes.filter((note) => !note.isDeleted).length

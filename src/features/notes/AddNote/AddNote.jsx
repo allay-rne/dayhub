@@ -56,7 +56,7 @@ const AddNote = (props) => {
       </div>
       <div className="editor__body">
         <Field
-          className={classNames("editor__field field", { "editor__field--error": error })}
+          className={classNames("editor__field field", {"editor__field--error": error})}
           id="note-title"
           placeholder="Write the name..."
           maxLength={20}
@@ -93,14 +93,14 @@ const AddNote = (props) => {
             key={tag}
           >
             {tag}
-          <Button
-            iconName="close"
-            iconPosition="after"
-            mode="transparent"
-            isLabelHidden
-            label="Delete"
-            onClick={() => handleDeleteTag(tag)}
-          />
+            <Button
+              iconName="close"
+              iconPosition="after"
+              mode="transparent"
+              isLabelHidden
+              label="Delete"
+              onClick={() => handleDeleteTag(tag)}
+            />
          </span>
         ))}
 

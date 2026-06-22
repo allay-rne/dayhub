@@ -14,9 +14,9 @@ const OverviewCard = (props) => {
     <div className="overview-card">
       <div className="overview-card__header">
         <div className="overview-card__icon-wrapper">
-        <Icon
-          name={name}
-        />
+          <Icon
+            name={name}
+          />
         </div>
         <h3 className="overview-card__header-title">{title}</h3>
       </div>

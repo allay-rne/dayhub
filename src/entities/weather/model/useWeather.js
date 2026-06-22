@@ -21,12 +21,12 @@ const useWeather = () => {
   }
 
   const temp = useMemo(() =>
-    Math.round(weather?.main?.temp),
+      Math.round(weather?.main?.temp),
     [weather])
 
   const humidity = useMemo(() =>
-    weather?.main?.humidity,
-  [weather])
+      weather?.main?.humidity,
+    [weather])
 
   const feels = useMemo(() =>
       Math.round(weather?.main?.feels_like),
@@ -37,11 +37,11 @@ const useWeather = () => {
     [weather])
 
   const windDeg = useMemo(() =>
-    weather?.wind?.deg,
-  [weather])
+      weather?.wind?.deg,
+    [weather])
 
   const weatherDesc = useMemo(() =>
-    weather?.weather[0]?.description,
+      weather?.weather[0]?.description,
     [weather])
 
   const weatherName = useMemo(() =>
@@ -53,7 +53,7 @@ const useWeather = () => {
     fetchWeather()
   }, []);
 
-  return{
+  return {
     weather,
     city,
     isLoading,

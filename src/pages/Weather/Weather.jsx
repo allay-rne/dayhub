@@ -10,12 +10,12 @@ const Weather = () => {
   console.log(weather)
 
 
-  return(
+  return (
     <div className="weather">
-    <WeatherHero
-      img={weatherBanner}
-    />
-    <WeatherOverview />
+      <WeatherHero
+        img={weatherBanner}
+      />
+      <WeatherOverview />
     </div>
   )
 }

@@ -25,7 +25,7 @@ const AddTask = (props) => {
       onSubmit={handleSubmit}
     >
       <Field
-        className={classNames("add-task__field field", { "add-task__field--error": error })}
+        className={classNames("add-task__field field", {"add-task__field--error": error})}
         htmlFor="new-task"
         id="new-task"
         placeholder="Add a new task..."

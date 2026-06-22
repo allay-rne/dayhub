@@ -5,9 +5,7 @@ import {windDirection} from "@/entities/weather/lib/windDirection.js";
 import Icon from "@/shared/ui/Icon/Icon.jsx";
 
 
-const WeatherOverview = (props) => {
-  const {
-  } = props
+const WeatherOverview = () => {
 
   const {
     weather,
@@ -43,10 +41,10 @@ const WeatherOverview = (props) => {
             <OverviewCard
               name="cloud"
               title="Precipitation"
-              value="10°C"
+              value="10%"
               subtitle="заглушка"
-              >
-              <p>No umbrella needed today</p>
+            >
+              <p className="weather-overview__cloud">No umbrella needed today</p>
             </OverviewCard>
 
             <OverviewCard
@@ -57,14 +55,15 @@ const WeatherOverview = (props) => {
             >
               <div className="weather-overview__direction">
                 <div>
-             <p>{windDirection(windDeg)}</p>
-             <p className="weather-overview__direction-subtitle">Direction</p>
+                  <p className="weather-overview__comp">{windDirection(windDeg)}</p>
                 </div>
+                <div className="weather-overview__icon">
                 <Icon
                   name="navigation"
                 />
+                </div>
               </div>
-              </OverviewCard>
+            </OverviewCard>
 
             <OverviewCard
               name="humidity"
@@ -73,11 +72,11 @@ const WeatherOverview = (props) => {
               subtitle="Comfortable"
             >
               <div className="weather-overview__progress">
-              <progress
-                className="overview-card__progress-bar"
-                value={humidity}
-                max={100}
-              />
+                <progress
+                  className="overview-card__progress-bar"
+                  value={humidity}
+                  max={100}
+                />
               </div>
             </OverviewCard>
           </div>

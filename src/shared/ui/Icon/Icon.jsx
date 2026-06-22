@@ -24,7 +24,6 @@ import HumidityIcon from '@/shared/assets/icons/humidity.svg?react'
 import TempIcon from '@/shared/assets/icons/temp.svg?react'
 
 
-
 const icon = {
   sun: SunIcon,
   user: UserIcon,

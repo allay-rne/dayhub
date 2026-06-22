@@ -11,14 +11,20 @@ const useNotes = () => {
     setNotes([newNotes, ...notes])
   }, [notes])
   const handleDeleteNotes = useCallback((id) => {
-    setNotes(notes.map((note) => note.id === id ? {...note, isDeleted: true} : note))
+    setNotes(notes.map((note) => note.id === id ? {
+      ...note,
+      isDeleted: true
+    } : note))
   }, [notes])
   const handleToggleFavorite = useCallback((id) => {
-    setNotes(notes.map((note) => note.id === id ? {...note, isFavorite: !note.isFavorite} : note))
-  },[notes])
+    setNotes(notes.map((note) => note.id === id ? {
+      ...note,
+      isFavorite: !note.isFavorite
+    } : note))
+  }, [notes])
   const handleSearchChange = useCallback((search) => {
     setSearchNotes(search)
-  },[])
+  }, [])
   const handleFilterChange = useCallback((filterNote) => {
     setFilter(filterNote)
   }, [])
@@ -34,23 +40,26 @@ const useNotes = () => {
     }
   }, [notes])
   const handleRestoreNote = useCallback((id) => {
-        setNotes(notes.map((note) => note.id === id ? {...note, isDeleted: false} : note))
+    setNotes(notes.map((note) => note.id === id ? {
+      ...note,
+      isDeleted: false
+    } : note))
   }, [notes])
 
   const filteredNotes = useMemo(() => {
     return notes.filter((note) =>
-   filter === 'all' ? note.isDeleted !== true
-      : filter === 'favorites' ? note.isFavorite && note.isDeleted !== true
-       : filter === 'tags' ? note.tags?.length > 0 && note.isDeleted !== true
-         : filter === 'trash' ? note.isDeleted === true
-      : true
+      filter === 'all' ? note.isDeleted !== true
+        : filter === 'favorites' ? note.isFavorite && note.isDeleted !== true
+          : filter === 'tags' ? note.tags?.length > 0 && note.isDeleted !== true
+            : filter === 'trash' ? note.isDeleted === true
+              : true
     )
   }, [notes, filter])
   const searchedNotes = useMemo(() => {
     return filteredNotes.filter((note) =>
-    note.title.toLowerCase()
-      .includes(searchNotes.trim().toLowerCase())
-      )
+      note.title.toLowerCase()
+        .includes(searchNotes.trim().toLowerCase())
+    )
   }, [searchNotes, filteredNotes])
 
   useEffect(() => {

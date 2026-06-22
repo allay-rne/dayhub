@@ -23,7 +23,7 @@ const useAddTask = (onAddTask) => {
 
     if (!isNewTaskTitleEmpty) {
 
-      const newTask= {
+      const newTask = {
         id: Date.now(),
         title: clearNewTaskTitle,
         isDone: false,
@@ -34,7 +34,7 @@ const useAddTask = (onAddTask) => {
       onAddTask(newTask)
 
       setNewTaskTitle('')
-    }else{
+    } else {
       setError('Please enter a task.')
     }
   }

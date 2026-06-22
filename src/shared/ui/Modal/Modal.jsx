@@ -6,11 +6,11 @@ const Modal = (props) => {
   } = props
 
   return (
-   <div className="modal">
-     <div className="modal__inner">
-       {children}
-     </div>
-   </div>
+    <div className="modal">
+      <div className="modal__inner">
+        {children}
+      </div>
+    </div>
   )
 }
 

@@ -24,10 +24,12 @@
       color: var(--tag-high-text);
       background-color: var(--tag-high-bg);
     }
+
     &--medium {
       color: var(--tag-medium-text);
       background-color: var(--tag-medium-bg);
     }
+
     &--low {
       color: var(--tag-low-text);
       background-color: var(--tag-low-bg);
@@ -64,10 +66,11 @@
 
   }
 
-  &--done{
-     .todo-item__label{
-       text-decoration: line-through;
-     }
+  &--done {
+    .todo-item__label {
+      text-decoration: line-through;
+    }
+
     opacity: 0.5;
   }
 }

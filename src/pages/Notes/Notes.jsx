@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from "react";
+import {useCallback, useState} from "react";
 import useNotes from "@/entities/notes/model/useNotes.js";
 import Hero from "@/shared/ui/Hero/index.js";
 import Button from "@/shared/ui/Button/index.js";
@@ -28,10 +28,10 @@ const Notes = () => {
   } = useNotes()
 
   const [openModal, setOpenModal] = useState(false)
-  const  [selectedNote, setSelectedNote] = useState(null)
+  const [selectedNote, setSelectedNote] = useState(null)
 
 
-  const handleOpenModal = useCallback(()=> {
+  const handleOpenModal = useCallback(() => {
     setOpenModal(true)
   }, [])
   const handleCloseModal = useCallback(() => {
@@ -52,7 +52,7 @@ const Notes = () => {
       >
         <Button
           label="+ New note"
-          onClick = {handleOpenModal}
+          onClick={handleOpenModal}
           mode="hero"
         />
       </Hero>
@@ -66,38 +66,39 @@ const Notes = () => {
           />
 
           <div className="notes__main">
-              <Field
-                className="notes__search"
-                htmlFor="todo-filter"
-                id="todo-filter"
-                placeholder="Search your notes..."
-                autoComplete="off"
-                type="search"
-                onChange={(event) => handleSearchChange(event.target.value)}
-              />
+            <Field
+              className="notes__search"
+              htmlFor="todo-filter"
+              id="todo-filter"
+              placeholder="Search your notes..."
+              autoComplete="off"
+              type="search"
+              onChange={(event) => handleSearchChange(event.target.value)}
+            />
 
             <main className="notes__list">
               {searchedNotes.length === 0
                 ? <div className='notes__empty'>Nothing here yet..</div>
-                : <ul className="notes-item__list"> {searchedNotes.map((note)=> (
-                      <NoteItem
-                        key={note.id}
-                        id={note.id}
-                        color={note.color}
-                        title={note.title}
-                        text={note.text}
-                        date={note.date}
-                        tags={note.tags}
-                        isFavorite={note.isFavorite}
-                        onDelete={handleDeleteNotes}
-                        isDeleted={note.isDeleted}
-                        onFullDelete={handleFullDeleteNote}
-                        onRestore={handleRestoreNote}
-                        onToggle={handleToggleFavorite}
-                        onClick={() => handleEditNote(note)}
-                      />
-                    ))}
-              </ul>
+                :
+                <ul className="notes-item__list"> {searchedNotes.map((note) => (
+                  <NoteItem
+                    key={note.id}
+                    id={note.id}
+                    color={note.color}
+                    title={note.title}
+                    text={note.text}
+                    date={note.date}
+                    tags={note.tags}
+                    isFavorite={note.isFavorite}
+                    onDelete={handleDeleteNotes}
+                    isDeleted={note.isDeleted}
+                    onFullDelete={handleFullDeleteNote}
+                    onRestore={handleRestoreNote}
+                    onToggle={handleToggleFavorite}
+                    onClick={() => handleEditNote(note)}
+                  />
+                ))}
+                </ul>
               }
             </main>
           </div>
@@ -108,7 +109,8 @@ const Notes = () => {
           <AddNote
             note={selectedNote}
             onClose={handleCloseModal}
-            onSave={selectedNote ? handleEditNotes : handleAddNotes}          />
+            onSave={selectedNote ? handleEditNotes : handleAddNotes}
+          />
         </Modal>}
     </>
 

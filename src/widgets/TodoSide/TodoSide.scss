@@ -55,8 +55,9 @@
         border-radius: var(--border-radius-full);
       }
 
-      span{
-        position: relative; z-index: 1;
+      span {
+        position: relative;
+        z-index: 1;
       }
     }
 
@@ -151,6 +152,7 @@
       font-size: 16px;
       font-weight: var(--font-weight-regular);
     }
+
     &__date {
       padding: 10px 14px;
       border: var(--border-width-s) solid var(--color-border);

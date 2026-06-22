@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import React, {useRef} from "react";
+import {TransitionGroup, CSSTransition} from 'react-transition-group'
 import useTasks from "@/entities/todo/model/useTasks.js";
 import TodoItem from "@/entities/todo/ui/TodoItem/index.js";
 import TodoSide from "@/widgets/TodoSide/index.js";
@@ -28,9 +28,9 @@ const Todo = () => {
   return (
     <div>
       <Hero
-       img={todoBanner}
-       title="My ToDo list"
-       subtitle="Order in affairs is the result in life"
+        img={todoBanner}
+        title="My ToDo list"
+        subtitle="Order in affairs is the result in life"
       />
       <div className="todo">
         <div className="todo__main">
@@ -45,8 +45,11 @@ const Todo = () => {
             ? <div className='todo__empty'>Not a single task...</div>
             : searchedTasks.length === 0
               ? <div className='todo__empty'>The filter worked too well.</div>
-              : <TransitionGroup component="ul" className="todo__list">
-                {searchedTasks.map(({ id, title, isDone, date, priority}) => {
+              : <TransitionGroup
+                component="ul"
+                className="todo__list"
+              >
+                {searchedTasks.map(({id, title, isDone, date, priority}) => {
                   if (!nodeRefs.current[id]) {
                     nodeRefs.current[id] = React.createRef()
                   }
@@ -73,7 +76,7 @@ const Todo = () => {
                     </CSSTransition>
                   )
                 })}
-          </TransitionGroup>
+              </TransitionGroup>
           }
         </div>
         <TodoSide

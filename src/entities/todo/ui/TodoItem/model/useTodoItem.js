@@ -4,12 +4,12 @@ import {formatDate} from "@/shared/lib/date.js";
 const useTodoItem = (onEdit, id, priority, date) => {
 
   const [isOpen, setIsOpen] = useState(false)
-  const [editValues, setEditValues] = useState({ priority, date })
+  const [editValues, setEditValues] = useState({priority, date})
 
-  const handleOpenEdit  = useCallback(() =>
+  const handleOpenEdit = useCallback(() =>
       setIsOpen(!isOpen)
     , [isOpen])
-  const handleSaveEdit  = useCallback(() => {
+  const handleSaveEdit = useCallback(() => {
     onEdit(id, {
       ...editValues,
       date: formatDate(editValues.date)
@@ -17,7 +17,7 @@ const useTodoItem = (onEdit, id, priority, date) => {
     setIsOpen(false)
   }, [onEdit, id, editValues])
 
-  return{
+  return {
     handleOpenEdit,
     handleSaveEdit,
     setEditValues,

@@ -2,7 +2,7 @@ import {useCallback, useState} from "react";
 import {formatNoteDate} from "@/shared/lib/date.js";
 
 
-  const useAddNote = (onSave, onClose, note) => {
+const useAddNote = (onSave, onClose, note) => {
 
   const [title, setTitle] = useState(note?.title || '')
   const [text, setText] = useState(note?.text || '')
@@ -38,12 +38,12 @@ import {formatNoteDate} from "@/shared/lib/date.js";
     }
   }
   const handleAddTags = () => {
-    const trimmedTag  = titleTags.trim()
-    const isNewTagsTitleEmpty = trimmedTag .length === 0
+    const trimmedTag = titleTags.trim()
+    const isNewTagsTitleEmpty = trimmedTag.length === 0
 
 
     if (!isNewTagsTitleEmpty && tags.length < 3) {
-      setTags([trimmedTag , ...tags])
+      setTags([trimmedTag, ...tags])
       setTitleTags('')
     } else {
       setError('Please enter a title.')

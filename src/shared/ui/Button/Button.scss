@@ -1,5 +1,5 @@
 .button {
-   @include flex-center(true);
+  @include flex-center(true);
 
   column-gap: 4px;
 
@@ -26,7 +26,7 @@
   }
 
   &:has(.button__icon:only-child) {
-  @include square(fluid-to-laptop(56, 44));
+    @include square(fluid-to-laptop(56, 44));
 
     padding: 0;
   }
@@ -36,10 +36,10 @@
     color: var(--color-icon);
 
     &:has(.button__icon:only-child) {
-   @include square(50px);
+      @include square(50px);
 
       .button__icon {
-        --iconSize:  #{fluid-to-laptop(30, 20)};
+        --iconSize: #{fluid-to-laptop(30, 20)};
       }
     }
   }

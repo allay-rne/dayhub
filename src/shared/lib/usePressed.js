@@ -5,10 +5,10 @@ const usePressed = () => {
 
   const [isPressed, setIsPressed] = useState(false)
 
-  const handleOnMouseDown  = () => {
+  const handleOnMouseDown = () => {
     setIsPressed(true)
   }
-  const handleOnMouseUp  = () => {
+  const handleOnMouseUp = () => {
     setIsPressed(false)
   }
 

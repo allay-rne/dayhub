@@ -18,12 +18,13 @@
   }
 
   &__search {
-      margin-bottom: 18px;
+    margin-bottom: 18px;
 
     .input {
       border-radius: var(--border-radius-s); // или конкретное значение
     }
   }
+
   &__empty {
     text-align: center;
     color: var(--color-text-secondary);

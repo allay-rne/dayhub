@@ -1,4 +1,4 @@
-.notes-filter{
+.notes-filter {
 
   display: flex;
   flex-direction: column;
@@ -29,6 +29,7 @@
       background-color: #ede5d8;
       color: var(--color-primary);
     }
+
     &--isActive {
       color: var(--color-primary);
       background-color: #ede5d8;
@@ -74,6 +75,7 @@
       font-size: 25px;
       color: var(--color-text-secondary);
     }
+
     svg {
       margin-bottom: 95px;
     }

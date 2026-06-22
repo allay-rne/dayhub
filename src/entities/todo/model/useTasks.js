@@ -13,14 +13,21 @@ const useTasks = () => {
     setTasks(tasks.filter((task) => task.id !== id))
   }, [tasks])
   const handleToggleTask = useCallback((id) => {
-    setTasks(tasks.map((task) => task.id === id ? {...task, isDone: !task.isDone} : task))
+    setTasks(tasks.map((task) => task.id === id ? {
+      ...task,
+      isDone: !task.isDone
+    } : task))
   }, [tasks])
   const handleEditTask = useCallback((id, {priority, date}) => {
-    setTasks(tasks.map((task) => task.id === id ? {...task, priority, date} : task))
+    setTasks(tasks.map((task) => task.id === id ? {
+      ...task,
+      priority,
+      date
+    } : task))
   }, [tasks])
   const handleDeleteAll = useCallback(() => {
     const result = confirm('Are you shure?')
-    if (result){
+    if (result) {
       setTasks([])
     }
   }, [])
@@ -29,7 +36,7 @@ const useTasks = () => {
   }, [])
   const handleSearchChange = useCallback((search) => {
     setSearchTasks(search)
-  },[])
+  }, [])
 
   const filteredTasks = useMemo(() => {
     return tasks.filter((task) =>

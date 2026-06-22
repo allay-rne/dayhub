@@ -70,6 +70,7 @@
     border-radius: 50%;
     display: inline-block;
   }
+
   &__header {
     display: flex;
     align-items: center;
@@ -94,10 +95,11 @@
     display: flex;
     align-items: center;
 
-    button{
+    button {
       width: 30px !important;
       height: 30px !important;
     }
+
     svg {
       width: 20px;
       height: 20px;

@@ -1,87 +1,87 @@
- :root {
+:root {
 
-    --color-bg: #ede5d8;
-    --color-surface: #fdfaf6;
-    --color-surface-2: #f4eee6;
+  --color-bg: #ede5d8;
+  --color-surface: #fdfaf6;
+  --color-surface-2: #f4eee6;
 
-    --color-primary: #7c7b45;
-    --color-primary-hover: #918c53;
-    --color-primary-light: #a2a06b;
+  --color-primary: #7c7b45;
+  --color-primary-hover: #918c53;
+  --color-primary-light: #a2a06b;
 
-    --color-accent: #d7b07a;
-    --color-accent-light: #f2dcc0;
+  --color-accent: #d7b07a;
+  --color-accent-light: #f2dcc0;
 
-    --color-text: #4c3424;
-    --color-text-secondary: #6b5f55;
-    --color-text-light: #ffffff;
+  --color-text: #4c3424;
+  --color-text-secondary: #6b5f55;
+  --color-text-light: #ffffff;
 
-    --color-border-dark: #959191;
-    --color-border: #ebe2d8;
-    --color-border-light: #f3ede6;
+  --color-border-dark: #959191;
+  --color-border: #ebe2d8;
+  --color-border-light: #f3ede6;
 
-    --color-success: #a8b089;
-    --color-warning: #efc27d;
-    --color-danger: #e59c7f;
+  --color-success: #a8b089;
+  --color-warning: #efc27d;
+  --color-danger: #e59c7f;
 
-    --tag-high-bg: #f8d7c9;
-    --tag-high-text: #d96c42;
+  --tag-high-bg: #f8d7c9;
+  --tag-high-text: #d96c42;
 
-    --tag-medium-bg: #f6e1b8;
-    --tag-medium-text: #d18b1d;
+  --tag-medium-bg: #f6e1b8;
+  --tag-medium-text: #d18b1d;
 
-    --tag-low-bg: #dde4cd;
-    --tag-low-text: #6f7c4a;
+  --tag-low-bg: #dde4cd;
+  --tag-low-text: #6f7c4a;
 
-    --color-icon: #c8a26d;
-    --color-icon-muted: #d8c5aa;
+  --color-icon: #c8a26d;
+  --color-icon-muted: #d8c5aa;
 
-   --color-button-filter: #a89c9a;
+  --color-button-filter: #a89c9a;
 
-    --gradient-primary: linear-gradient(
-      90deg,
-      #6f6e3f 0%,
-      #8a8850 50%,
-      #6f6e3f 100%
-    );
+  --gradient-primary: linear-gradient(
+    90deg,
+    #6f6e3f 0%,
+    #8a8850 50%,
+    #6f6e3f 100%
+  );
 
-    --hero-overlay: rgba(72, 70, 39, 0.55);
+  --hero-overlay: rgba(72, 70, 39, 0.55);
 
-     --shadow-s: 0 2px 8px rgba(0, 0, 0, 0.04);
-     --shadow-m: 0 8px 24px rgba(0, 0, 0, 0.06);
-     --shadow-l: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-s: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-m: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-l: 0 20px 40px rgba(0, 0, 0, 0.08);
 
-     --font-family-base: 'FiraSansCondensed', sans-serif;
+  --font-family-base: 'FiraSansCondensed', sans-serif;
 
-     --font-weight-regular: 400;
-     --font-weight-medium: 500;
-     --font-weight-semibold: 600;
-     --font-weight-bold: 700;
-
-
-     --font-size-big: 52px;
-     --font-size-base: 16px;
-     --font-size-small: 14px;
-     --font-size-mini: 12px;
-
-     --font-family-accent: 'ProtestRevolution', cursive;
-
-     --font-weight-link-regular: 400;
-
-    --border-radius-xs: 5px;
-    --border-radius-s: 10px;
-    --border-radius-m: 16px;
-    --border-radius-l: 24px;
-    --border-radius-xl: 32px;
-    --border-radius-full: 999px;
-
-    --border-width-s: 1px;
-    --border-width-m: 2px;
-    --border-width-l: 4px;
-    --border-width-xl: 8px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
 
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
+  --font-size-big: 52px;
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-mini: 12px;
 
-  }
+  --font-family-accent: 'ProtestRevolution', cursive;
+
+  --font-weight-link-regular: 400;
+
+  --border-radius-xs: 5px;
+  --border-radius-s: 10px;
+  --border-radius-m: 16px;
+  --border-radius-l: 24px;
+  --border-radius-xl: 32px;
+  --border-radius-full: 999px;
+
+  --border-width-s: 1px;
+  --border-width-m: 2px;
+  --border-width-l: 4px;
+  --border-width-xl: 8px;
+
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+}

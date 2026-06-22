@@ -106,9 +106,8 @@
       height: 32px;
       color: var(--color-icon);
       fill: var(--color-icon);
-      transition:
-        color var(--transition-fast),
-        fill var(--transition-fast);
+      transition: color var(--transition-fast),
+      fill var(--transition-fast);
     }
 
     &:hover svg {

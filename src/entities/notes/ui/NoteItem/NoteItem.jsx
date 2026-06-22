@@ -61,7 +61,7 @@ const NoteItem = (props) => {
               onMouseDown={(event) => {
                 event.stopPropagation()
               }}
-            /> : null }
+            /> : null}
 
           <Button
             iconName="close"
@@ -88,7 +88,7 @@ const NoteItem = (props) => {
           >
             {tag}
           </span>
-          ))}
+        ))}
       </div>
       <div className="notes-item__footer">
         <data>{date}</data>

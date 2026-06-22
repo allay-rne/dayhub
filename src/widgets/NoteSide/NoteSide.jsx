@@ -19,7 +19,7 @@ const NoteSide = (props) => {
     trashNote,
   } = useNoteSide(notes)
 
-  const notesFilter= [
+  const notesFilter = [
     {
       icon: "notes",
       title: "All notes",
@@ -49,7 +49,7 @@ const NoteSide = (props) => {
   return (
     <aside className="notes-filter">
       <ul className="notes-filter__list">
-        {notesFilter.map(({icon, title, number, filter})=>(
+        {notesFilter.map(({icon, title, number, filter}) => (
           <li
             className={classNames(className, "notes-filter__item", {
               'notes-filter__item--isActive': activeFilter === filter
@@ -66,7 +66,10 @@ const NoteSide = (props) => {
         ))}
       </ul>
       <div className="notes-filter__motivation">
-        <img src={flowerImg} alt="motivation" />
+        <img
+          src={flowerImg}
+          alt="motivation"
+        />
         <div className="notes-filter__motivation-right">
           <p>Write it down today, thank yourself tomorrow.</p>
           <Icon name="hearth" />
