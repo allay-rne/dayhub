@@ -4,6 +4,7 @@ import Button from "@/shared/ui/Button/index.js";
 import useWeather from "@/entities/weather/model/useWeather.js";
 import {CITIES} from "@/entities/weather/lib/cities.js";
 import Icon from "@/shared/ui/Icon/Icon.jsx";
+import {getWeatherIcon} from "@/entities/weather/lib/getWeatherIcon.js";
 
 const WeatherHero = (props) => {
   const {
@@ -68,7 +69,7 @@ const WeatherHero = (props) => {
               <div className="weather-hero__weather-temp"> {temp}°C</div>
               <Icon
                 className="weather-hero__icon-sun"
-                name="sun"
+                name={getWeatherIcon(weatherDesc)}
               />
             </div>
             <div className="weather-hero__weather-description">{weatherDesc}</div>

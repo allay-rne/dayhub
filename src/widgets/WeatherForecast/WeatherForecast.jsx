@@ -3,6 +3,7 @@ import ForecastRow from "@/shared/ui/ForecastRow/index.js";
 import useForecast from "@/entities/weather/model/useForecast.js";
 import {getDayTemps} from "@/entities/weather/lib/getDayTemps.js";
 import {formatDate} from "@/shared/lib/date.js";
+import {getWeatherIcon} from "@/entities/weather/lib/getWeatherIcon.js";
 
 const WeatherForecast = () => {
 
@@ -23,7 +24,7 @@ const WeatherForecast = () => {
           tempMax={Math.round(tempMax)}
           tempMin={Math.round(tempMin)}
           weatherDesc={items[0].weather[0].description}
-          name="sun"
+          name={getWeatherIcon(items[0].weather[0].description)}
         />
           )
       })}

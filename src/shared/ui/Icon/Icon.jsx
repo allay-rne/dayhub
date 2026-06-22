@@ -22,7 +22,10 @@ import WindIcon from '@/shared/assets/icons/wind.svg?react'
 import NavigationIcon from '@/shared/assets/icons/navigation.svg?react'
 import HumidityIcon from '@/shared/assets/icons/humidity.svg?react'
 import TempIcon from '@/shared/assets/icons/temp.svg?react'
-
+import FogIcon from '@/shared/assets/icons/fog.svg?react'
+import ThunderstormIcon from '@/shared/assets/icons/thunderstorm.svg?react'
+import SnowIcon from '@/shared/assets/icons/snow.svg?react'
+import CloudNoRainIcon from '@/shared/assets/icons/cloudNoRain.svg?react'
 
 const icon = {
   sun: SunIcon,
@@ -47,7 +50,10 @@ const icon = {
   navigation: NavigationIcon,
   humidity: HumidityIcon,
   temp: TempIcon,
-
+  fog: FogIcon,
+  thunderstorm: ThunderstormIcon,
+  snow: SnowIcon,
+  cloudNoRain: CloudNoRainIcon,
 }
 
 const Icon = (props) => {
@@ -56,6 +62,7 @@ const Icon = (props) => {
     name,
     ariaLabel,
     isFavorite,
+    style,
   } = props
 
   const Component = icon[name]
@@ -68,6 +75,7 @@ const Icon = (props) => {
         {'icon--favorite': isFavorite}
       )}
       aria-label={ariaLabel}
+      style={style}
     >
       <Component />
     </span>

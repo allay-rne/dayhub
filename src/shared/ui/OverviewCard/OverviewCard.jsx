@@ -8,12 +8,13 @@ const OverviewCard = (props) => {
     value,
     subtitle,
     children,
+    iconBg,
   } = props
 
   return (
     <div className="overview-card">
       <div className="overview-card__header">
-        <div className="overview-card__icon-wrapper">
+        <div className="overview-card__icon-wrapper" style={{ backgroundColor: iconBg }}>
           <Icon
             name={name}
           />
