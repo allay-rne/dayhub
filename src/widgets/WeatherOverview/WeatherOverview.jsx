@@ -9,23 +9,15 @@ import {getHumidityLabel} from "@/entities/weather/lib/getHumidityLabel.js";
 const WeatherOverview = () => {
 
   const {
-    weather,
-    city,
-    isLoading,
-    error,
     temp,
     humidity,
     feels,
     windSpeed,
     windDeg,
     weatherDesc,
-    weatherName,
-    fetchWeather,
-    setCity,
   } = useWeather()
 
   return (
-    <>
       <section className="weather-overview">
         <h2>Quick overview</h2>
         <div className="weather-overview__card">
@@ -88,7 +80,6 @@ const WeatherOverview = () => {
           </div>
         </div>
       </section>
-    </>
   )
 }
 

@@ -1,4 +1,26 @@
-
 .home-overview {
+  z-index: 1;
+  position: relative;
+  margin-top: -250px;
+  margin-bottom: 30px;
 
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 0 50px;;
+  }
+
+  &__card-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 0 50px;
+  }
+
+  &__button {
+    width: 220px;
+  }
 }

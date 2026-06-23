@@ -26,6 +26,10 @@ import FogIcon from '@/shared/assets/icons/fog.svg?react'
 import ThunderstormIcon from '@/shared/assets/icons/thunderstorm.svg?react'
 import SnowIcon from '@/shared/assets/icons/snow.svg?react'
 import CloudNoRainIcon from '@/shared/assets/icons/cloudNoRain.svg?react'
+import SunCloudIcon from '@/shared/assets/icons/sunCloud.svg?react'
+import NotePageIcon from '@/shared/assets/icons/notePage.svg?react'
+import TodoIcon from '@/shared/assets/icons/todo.svg?react'
+
 
 const icon = {
   sun: SunIcon,
@@ -54,6 +58,9 @@ const icon = {
   thunderstorm: ThunderstormIcon,
   snow: SnowIcon,
   cloudNoRain: CloudNoRainIcon,
+  sunCloud: SunCloudIcon,
+  notePage: NotePageIcon,
+  todo: TodoIcon,
 }
 
 const Icon = (props) => {
