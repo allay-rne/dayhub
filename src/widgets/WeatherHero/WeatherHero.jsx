@@ -13,16 +13,9 @@ const WeatherHero = (props) => {
   } = props
 
   const {
-    weather,
-    city,
-    isLoading,
-    error,
     temp,
-    humidity,
     feels,
-    windSpeed,
     weatherDesc,
-    weatherName,
     fetchWeather,
     setCity,
   } = useWeather()
