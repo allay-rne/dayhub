@@ -2,8 +2,13 @@ import './LoginForm.scss'
 import Field from "@/shared/ui/Field/index.js";
 import Button from "@/shared/ui/Button/index.js";
 import Icon from "@/shared/ui/Icon/Icon.jsx";
+import {useContext} from "react";
+import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 
 const LoginForm = () => {
+
+  const { handleToggle } = useContext(AuthContext)
+
 
   const soc1alItem = [
     {
@@ -87,6 +92,7 @@ const LoginForm = () => {
             <Button
               label="Create Account"
               mode="transparent"
+              onClick={handleToggle}
             />
           </div>
         </div>
