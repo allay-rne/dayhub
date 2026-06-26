@@ -4,13 +4,19 @@ import Logo from "@/shared/ui/Logo/index.js";
 import Button from "@/shared/ui/Button";
 import {useContext} from "react";
 import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
+import UserDropdown from "@/features/auth/UserDropdown/index.js";
 
 const Header = (props) => {
   const {
     url,
   } = props
 
-  const { handleOpen } = useContext(AuthContext)
+  const {
+    isLoggedIn,
+    isDropdownOpen,
+    handleOpen,
+    handleDropdownToggle
+  } = useContext(AuthContext)
 
   const menuItems = [
     {
@@ -80,11 +86,12 @@ const Header = (props) => {
             label="Login"
             isLabelHidden
             mode="transparent"
-            iconName="user"
+            iconName={isLoggedIn ? "personCheck" : "user"}
             iconPosition='before'
-            onClick={handleOpen}
+            onClick={isLoggedIn ? handleDropdownToggle : handleOpen}
           />
         </div>
+        {isLoggedIn && isDropdownOpen && <UserDropdown />}
       </div>
     </header>
   )

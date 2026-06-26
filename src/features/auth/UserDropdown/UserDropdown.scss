@@ -1,0 +1,40 @@
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  padding: 16px;
+  background-color: var(--color-bg);
+  border-radius: var(--border-radius-s);
+  box-shadow: 0 0 30px rgb(149 145 145);
+
+  min-width: 200px;
+
+  &__name {
+    p {
+      text-align: center;
+      font-size: 18px;
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+
+    .button {
+      flex: 1;
+    }
+  }
+
+  &__exit-btn {
+    margin-top: 5px;
+  }
+
+  &__exit-btn,
+  &__rename-btn
+  {
+    width: 100%;
+  }
+}

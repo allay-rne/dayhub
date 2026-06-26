@@ -7,33 +7,43 @@ export const AuthProvider = (props) => {
   const {children} = props
 
   const {
+    user,
     open,
     isLogin,
-    emailAcc,
-    passwordAcc,
     isLoggedIn,
+    isDropdownOpen,
     handleOpen,
     handleClose,
     handleToggle,
     handleLogin,
+    handleDropdownToggle,
+    handleLogout,
   } = useAuth()
 
   const value = useMemo(() => ({
+    user,
     open,
     isLogin,
     isLoggedIn,
+    isDropdownOpen,
     handleOpen,
     handleClose,
     handleToggle,
     handleLogin,
+    handleDropdownToggle,
+    handleLogout,
   }), [
+    user,
     open,
     isLogin,
     isLoggedIn,
+    isDropdownOpen,
     handleOpen,
     handleClose,
     handleToggle,
     handleLogin,
+    handleDropdownToggle,
+    handleLogout,
   ])
 
   return (

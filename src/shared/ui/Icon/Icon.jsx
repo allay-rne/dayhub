@@ -31,6 +31,8 @@ import NotePageIcon from '@/shared/assets/icons/notePage.svg?react'
 import TodoIcon from '@/shared/assets/icons/todo.svg?react'
 import VkIcon from '@/shared/assets/icons/vk.svg?react'
 import AppleIcon from '@/shared/assets/icons/apple.svg?react'
+import PersonCheckIcon from '@/shared/assets/icons/personCheck.svg?react'
+import CheckIcon from '@/shared/assets/icons/check.svg?react'
 
 
 const icon = {
@@ -38,6 +40,7 @@ const icon = {
   /* header icon */
   sun: SunIcon,
   user: UserIcon,
+  personCheck: PersonCheckIcon,
   /* footer icon */
   gmail: GmailIcon,
   telegram: TelegramIcon,
@@ -73,6 +76,7 @@ const icon = {
   plus: PlusIcon,
   vk: VkIcon,
   apple: AppleIcon,
+  check: CheckIcon,
 
 }
 
