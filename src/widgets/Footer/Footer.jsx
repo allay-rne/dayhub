@@ -41,11 +41,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="footer__inner container">
-
-        <p className="footer__copyright">
-          © <time dateTime="2026">2026</time> DayHub. All rights reserved.
-        </p>
+      <div className="footer__inner">
 
         <nav className="footer__socials">
           {socialLinks.map((link) => (
@@ -64,6 +60,11 @@ const Footer = () => {
             </a>
           ))}
         </nav>
+      </div>
+      <div className="footer__extra">
+        <p className="footer__copyright">
+          © <time dateTime="2026">2026</time> DayHub. All rights reserved.
+        </p>
 
         <div className="footer__extra-links">
           {infoLinks.map((link) => (
@@ -76,8 +77,6 @@ const Footer = () => {
             </a>
           ))}
         </div>
-
-
       </div>
     </footer>
   )

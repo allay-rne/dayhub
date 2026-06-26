@@ -13,8 +13,8 @@
 
   &__inner {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-end;
+    justify-content: center;
 
     padding-inline: 20px;
 
@@ -59,8 +59,14 @@
   }
 
   &__extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
     width: 100%;
     max-width: 1200px;
+
+    font-size: var(--font-size-mini);
   }
 
   &__extra-links {
@@ -75,9 +81,7 @@
 
   &__extra-link {
     position: relative;
-
     padding-inline: 16px;
-
     transition: color 0.2s ease;
 
     &:hover {
