@@ -2,27 +2,20 @@ import './LoginForm.scss'
 import Field from "@/shared/ui/Field/index.js";
 import Button from "@/shared/ui/Button/index.js";
 import Icon from "@/shared/ui/Icon/Icon.jsx";
-import {useContext, useState} from "react";
-import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
+import useLoginForm from "@/features/auth/model/useLoginForm.js";
+import {soc1alItem} from "@/features/auth/config/soc1als.js";
 
 const LoginForm = () => {
 
-  const { handleToggle, handleLogin } = useContext(AuthContext)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-
-  const soc1alItem = [{
-    icon: "vk", href: "/",
-  }, {
-    icon: "github", href: "/",
-  }, {
-    icon: "telegram", href: "/",
-  }, {
-    icon: "gmail", href: "/",
-  }, {
-    icon: "apple", href: "/",
-  },]
+ const {
+   email,
+   password,
+   handleToggle,
+   setEmail,
+   setPassword,
+   errors,
+   handleSubmit,
+ } = useLoginForm()
 
   return (<div className="login-form">
     <div className="login-form__inner">
@@ -42,7 +35,9 @@ const LoginForm = () => {
         </ul>
       </div>
       <div className="login-form__field">
+        <div className="login-form__field-wrap">
         <Field
+          className={errors.email ? 'login-form__field--error' : ''}
           label="E-mail"
           htmlFor="enter-email"
           id="enter-email"
@@ -51,7 +46,11 @@ const LoginForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Field
+        {errors.email && <span className="login-form__error">{errors.email}</span>}
+        </div>
+        <div className="login-form__field-wrap">
+          <Field
+            className={errors.password ? 'login-form__field--error' : ''}
           label="Password"
           htmlFor="enter-password"
           id="enter-password"
@@ -60,6 +59,7 @@ const LoginForm = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        </div>
       </div>
       <div className="login-form__remember">
         <input
@@ -71,7 +71,7 @@ const LoginForm = () => {
       <Button
         className="login-form__button-login"
         label="Log in"
-        onClick={() => handleLogin(email, password)}
+        onClick={handleSubmit}
       />
       <div className="login-form__footer">
         <Button

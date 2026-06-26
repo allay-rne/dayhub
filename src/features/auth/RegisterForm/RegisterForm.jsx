@@ -4,19 +4,11 @@ import Field from "@/shared/ui/Field/index.js";
 import Button from "@/shared/ui/Button/index.js";
 import {useContext} from "react";
 import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
+import {soc1alItem} from "@/features/auth/config/soc1als.js";
 
 const RegisterForm = () => {
 
   const { handleToggle } = useContext(AuthContext)
-
-
-  const soc1alItem = [
-    { icon: "vk", href: "/" },
-    { icon: "github", href: "/" },
-    { icon: "telegram", href: "/" },
-    { icon: "gmail", href: "/" },
-    { icon: "apple", href: "/" },
-  ]
 
   return (
     <div className="register-form">
