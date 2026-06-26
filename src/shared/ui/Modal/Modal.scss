@@ -11,7 +11,9 @@
   background-color: rgba(0, 0, 0, 0.5);
 
   &__inner {
-    min-width: 500px;
+    overflow-y: auto;
+    min-width: 420px;
+    min-height: 90vh;
     padding: 4px;
     background-color: var(--color-surface);
     border-radius: var(--border-radius-s);

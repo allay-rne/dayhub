@@ -29,26 +29,35 @@ import CloudNoRainIcon from '@/shared/assets/icons/cloudNoRain.svg?react'
 import SunCloudIcon from '@/shared/assets/icons/sunCloud.svg?react'
 import NotePageIcon from '@/shared/assets/icons/notePage.svg?react'
 import TodoIcon from '@/shared/assets/icons/todo.svg?react'
+import VkIcon from '@/shared/assets/icons/vk.svg?react'
+import AppleIcon from '@/shared/assets/icons/apple.svg?react'
 
 
 const icon = {
+
+  /* header icon */
   sun: SunIcon,
   user: UserIcon,
+  /* footer icon */
   gmail: GmailIcon,
   telegram: TelegramIcon,
   github: GithubIcon,
-  close: CloseIcon,
+  /* home icon */
+  todo: TodoIcon,
+  notePage: NotePageIcon,
+  sunCloud: SunCloudIcon,
+  /* todo icon */
   calendar: CalendarIcon,
-  search: SearchIcon,
-  trash: TrashIcon,
   stats: StatsIcon,
   pencil: PencilIcon,
+  /* notes icon */
   star: StarIvon,
   notes: NotesIcon,
   tags: TagsIcon,
+  trash: TrashIcon,
   hearth: HearthIcon,
-  plus: PlusIcon,
   arrowBack: ArrowBackIcon,
+  /* weather icon */
   cloud: CloudIcon,
   wind: WindIcon,
   navigation: NavigationIcon,
@@ -58,9 +67,13 @@ const icon = {
   thunderstorm: ThunderstormIcon,
   snow: SnowIcon,
   cloudNoRain: CloudNoRainIcon,
-  sunCloud: SunCloudIcon,
-  notePage: NotePageIcon,
-  todo: TodoIcon,
+  /* general icon */
+  close: CloseIcon,
+  search: SearchIcon,
+  plus: PlusIcon,
+  vk: VkIcon,
+  apple: AppleIcon,
+
 }
 
 const Icon = (props) => {

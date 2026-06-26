@@ -19,8 +19,7 @@ const AddTask = (props) => {
     handleSubmit,
   } = useAddTask(onAddTask)
 
-  return (
-    <form
+  return (<form
       className="add-task"
       onSubmit={handleSubmit}
     >
@@ -51,8 +50,7 @@ const AddTask = (props) => {
         label="Add Task"
         type="submit"
       />
-    </form>
-  )
+    </form>)
 }
 
 export default AddTask

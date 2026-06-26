@@ -1,0 +1,1 @@
+export { AuthProvider } from "@/entities/user/model/AuthContext.jsx"

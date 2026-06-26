@@ -1,10 +1,14 @@
 import './HomeHero.scss'
 import Button from "@/shared/ui/Button";
+import {useContext} from "react";
+import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 
 const HomeHero = (props) => {
   const {
     img,
   } = props
+
+  const { handleOpen } = useContext(AuthContext)
 
   return (
     <section
@@ -23,7 +27,7 @@ const HomeHero = (props) => {
           <Button
             className="home-hero__button"
             label="Let's get started"
-            href="#"
+            onClick={handleOpen}
           />
         </div>
       </div>

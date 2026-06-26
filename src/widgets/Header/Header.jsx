@@ -2,11 +2,15 @@ import './Header.scss'
 import classNames from 'classnames'
 import Logo from "@/shared/ui/Logo/index.js";
 import Button from "@/shared/ui/Button";
+import {useContext} from "react";
+import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 
 const Header = (props) => {
   const {
     url,
   } = props
+
+  const { handleOpen } = useContext(AuthContext)
 
   const menuItems = [
     {
@@ -78,6 +82,7 @@ const Header = (props) => {
             mode="transparent"
             iconName="user"
             iconPosition='before'
+            onClick={handleOpen}
           />
         </div>
       </div>
