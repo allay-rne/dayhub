@@ -47,7 +47,7 @@ const useTasks = () => {
     return filteredTasks.filter((task) =>
       task.title.toLowerCase()
         .includes(searchTasks.trim().toLowerCase())
-    )
+    ).sort((a, b) => a.isDone - b.isDone)
   }, [searchTasks, filteredTasks])
 
   useEffect(() => {
