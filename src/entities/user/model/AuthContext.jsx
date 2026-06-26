@@ -9,23 +9,31 @@ export const AuthProvider = (props) => {
   const {
     open,
     isLogin,
-    handleToggle,
+    emailAcc,
+    passwordAcc,
+    isLoggedIn,
     handleOpen,
     handleClose,
+    handleToggle,
+    handleLogin,
   } = useAuth()
 
   const value = useMemo(() => ({
     open,
     isLogin,
-    handleToggle,
+    isLoggedIn,
     handleOpen,
     handleClose,
+    handleToggle,
+    handleLogin,
   }), [
     open,
     isLogin,
-    handleToggle,
+    isLoggedIn,
     handleOpen,
     handleClose,
+    handleToggle,
+    handleLogin,
   ])
 
   return (
