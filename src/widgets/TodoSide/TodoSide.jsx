@@ -11,13 +11,9 @@ const TodoSide = (props) => {
   } = props
 
   const {
-    pendingCount,
-    overdueCount,
     result,
     displayTasks,
-    selectedDate,
     isCalendarOpen,
-    completedCount,
     statsItem,
     setSelectedDate,
     handleToggleButton,
@@ -29,7 +25,7 @@ const TodoSide = (props) => {
       <div className="side-stats">
 
         <div className="side-stats__header">
-          <h2 className="side-stats__heading">Overview</h2>
+          <h3 className="side-stats__heading">Overview</h3>
           <Icon
             name="stats"
           />
@@ -76,7 +72,7 @@ const TodoSide = (props) => {
 
       <div className="side-calendar">
         <div className="side-calendar__header">
-          <h2 className="side-calendar__heading">Today</h2>
+          <h3 className="side-calendar__heading">Today</h3>
           <Icon
             name="calendar"
           />
@@ -85,7 +81,7 @@ const TodoSide = (props) => {
         <div className="side-calendar__body">
           {displayTasks.length === 0
             ?
-            <div className='side-calendar__empty'>The tasks were frightened and did not come...</div>
+            <p className='side-calendar__empty'>The tasks were frightened and did not come...</p>
             : <ul className="side-calendar__list">
               {displayTasks.map(({id, title, isDone, priority}) => (
                 <TodoItem

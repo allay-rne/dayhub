@@ -25,8 +25,14 @@ const LoginForm = () => {
         <div className="login-form__header">
           <ul className="login-form__list">
             {soc1alItem.map(({icon, href}, index) => (
-              <li className="login-form__item" key={index}>
-                <a className="login-form__link" href={href}>
+              <li
+                className="login-form__item"
+                key={index}
+              >
+                <a
+                  className="login-form__link"
+                  href={href}
+                >
                   <Icon name={icon} />
                 </a>
               </li>
@@ -45,18 +51,21 @@ const LoginForm = () => {
               value={email}
               onChange={(e) => handleEmailChange(e.target.value)}
             />
-            {errors.email && <span className="login-form__error">{errors.email}</span>}
+            {errors.email &&
+              <span className="login-form__error">{errors.email}</span>}
           </div>
           <div className="login-form__field-wrap">
-            <div className="login-form__password-wrap">
-              <Field
-                className={errors.password ? 'login-form__field--error' : ''}
-                label="Password" htmlFor="enter-password" id="enter-password"
-                type={isPasswordVisible ? 'text' : 'password'}
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => handlePasswordChange(e.target.value)}
-              >
+
+            <Field
+              className={errors.password ? 'login-form__field--error' : ''}
+              label="Password"
+              htmlFor="enter-password"
+              id="enter-password"
+              type={isPasswordVisible ? 'text' : 'password'}
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => handlePasswordChange(e.target.value)}
+            >
               <Button
                 iconName={isPasswordVisible ? 'visibilityOff' : 'visibility'}
                 isLabelHidden
@@ -65,8 +74,8 @@ const LoginForm = () => {
                 mode="transparent"
                 onClick={handleTogglePassword}
               />
-              </Field>
-            </div>
+            </Field>
+
           </div>
         </div>
         <div className="login-form__remember">
@@ -78,7 +87,11 @@ const LoginForm = () => {
             Remember Me
           </label>
         </div>
-        <Button className="login-form__button-login" label="Log in" onClick={handleSubmit} />
+        <Button
+          className="login-form__button-login"
+          label="Log in"
+          onClick={handleSubmit}
+        />
         <div className="login-form__footer">
           <Button
             className="login-form__link-btn"

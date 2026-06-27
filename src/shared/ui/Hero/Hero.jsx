@@ -12,7 +12,7 @@ const Hero = (props) => {
 
   return (
     <section
-      className={classNames(className, 'weather-hero')}
+      className={classNames(className, 'hero')}
       style={{
         backgroundImage: `url(${img})`,
         backgroundSize: "cover",

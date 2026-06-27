@@ -11,7 +11,7 @@ const ForecastRow = (props) => {
   } = props
 
   return (
-    <div className="forecast-row">
+    <article className="forecast-row">
       <p className="forecast-row__date">{date}</p>
       <div className="forecast-row__main">
         <Icon name={name} />
@@ -20,7 +20,7 @@ const ForecastRow = (props) => {
           <p className="forecast-row__desc">{weatherDesc}</p>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 

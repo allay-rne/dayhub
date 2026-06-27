@@ -44,7 +44,7 @@ const NoteItem = (props) => {
                     className="notes-item__color"
                     style={{backgroundColor: color}}
                   />
-          <h2 className='notes-item__title'>{title}</h2>
+          <h3 className='notes-item__title'>{title}</h3>
         </div>
         <div className="notes-item__actions">
           {isDeleted === true ?

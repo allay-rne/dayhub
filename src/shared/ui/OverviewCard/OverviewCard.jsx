@@ -12,7 +12,7 @@ const OverviewCard = (props) => {
   } = props
 
   return (
-    <div className="overview-card">
+    <article className="overview-card">
       <div className="overview-card__header">
         <div className="overview-card__icon-wrapper" style={{ backgroundColor: iconBg }}>
           <Icon
@@ -31,7 +31,7 @@ const OverviewCard = (props) => {
         <div className="overview-card__footer-children">{children}</div>
       </div>
 
-    </div>
+    </article>
   )
 }
 

@@ -59,14 +59,14 @@ const WeatherHero = (props) => {
           </select>
           <div className="weather-hero__weather">
             <div className="weather-hero__weather-today">
-              <div className="weather-hero__weather-temp"> {temp}°C</div>
+              <strong className="weather-hero__weather-temp"> {temp}°C</strong>
               <Icon
                 className="weather-hero__icon-sun"
                 name={getWeatherIcon(weatherDesc)}
               />
             </div>
-            <div className="weather-hero__weather-description">{weatherDesc}</div>
-            <div className="weather-hero__weather-feels">Feels like {feels}°C</div>
+            <p className="weather-hero__weather-description">{weatherDesc}</p>
+            <p className="weather-hero__weather-feels">Feels like {feels}°C</p>
           </div>
         </div>
       </div>

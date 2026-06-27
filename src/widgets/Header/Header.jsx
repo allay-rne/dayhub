@@ -6,6 +6,7 @@ import {useContext} from "react";
 import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 import UserDropdown from "@/features/auth/UserDropdown/index.js";
 import ThemeButton from "@/app/providers/theme/ThemeButton/index.js";
+import {Link} from "react-router-dom";
 
 const Header = (props) => {
   const {
@@ -59,14 +60,14 @@ const Header = (props) => {
                 className="header__menu-item"
                 key={href}
               >
-                <a
+                <Link
                   className={classNames('header__menu-link', {
                     'is-active': href === url
                   })}
-                  href={href}
+                  to={href}
                 >
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -11,13 +11,13 @@ const Weather = () => {
   const { toggleTheme } = useContext(ThemeContext)
 
   return (
-    <div className="weather">
+    <main className="weather">
       <WeatherHero
         img={!toggleTheme ? weatherBanner : weatherDarkBanner}
       />
       <WeatherOverview />
       <WeatherForecast />
-    </div>
+    </main>
   )
 }
 

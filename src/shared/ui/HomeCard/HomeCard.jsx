@@ -12,7 +12,7 @@ const HomeCard = (props) => {
   } = props
 
   return (
-    <div className="home-card">
+    <article className="home-card">
       <div className="home-card__header">
         <div
           className="home-card__icon"
@@ -32,7 +32,7 @@ const HomeCard = (props) => {
       </div>
       }
 
-    </div>
+    </article>
   )
 }
 

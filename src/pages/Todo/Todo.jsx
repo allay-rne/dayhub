@@ -31,7 +31,7 @@ const Todo = () => {
   const nodeRefs = useRef({})
 
   return (
-    <div>
+    <main>
       <Hero
         img={!toggleTheme ? todoBanner : todoDarkBanner}
         title="My ToDo list"
@@ -47,9 +47,9 @@ const Todo = () => {
             onSearch={handleSearchChange}
           />
           {tasks.length === 0
-            ? <div className='todo__empty'>Not a single task...</div>
+            ? <p className='todo__empty'>Not a single task...</p>
             : searchedTasks.length === 0
-              ? <div className='todo__empty'>The filter worked too well.</div>
+              ? <p className='todo__empty'>The filter worked too well.</p>
               : <TransitionGroup
                 component="ul"
                 className="todo__list"
@@ -89,7 +89,7 @@ const Todo = () => {
           tasks={tasks}
         />
       </div>
-    </div>
+    </main>
   )
 }
 

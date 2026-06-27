@@ -12,24 +12,25 @@ const WeatherForecast = () => {
   } = useForecast()
 
   return (
-    <div className="weather-forecast">
-      <h3>5-day forecast</h3>
-      <div className="weather-forecast__list">
-      {Object.entries(weatherByDay).slice(0, 5).map(([date, items]) => {
-        const { tempMax, tempMin } = getDayTemps(items)
+    <section className="weather-forecast">
+      <h3 className="weather-forecast__title">5-day forecast</h3>
+      <ul className="weather-forecast__list">
+        {Object.entries(weatherByDay).slice(0, 5).map(([date, items]) => {
+          const {tempMax, tempMin} = getDayTemps(items)
           return (
-        <ForecastRow
-          key={date}
-          date={formatDate(date)}
-          tempMax={Math.round(tempMax)}
-          tempMin={Math.round(tempMin)}
-          weatherDesc={items[0].weather[0].description}
-          name={getWeatherIcon(items[0].weather[0].description)}
-        />
+            <li key={date}>
+              <ForecastRow
+                date={formatDate(date)}
+                tempMax={Math.round(tempMax)}
+                tempMin={Math.round(tempMin)}
+                weatherDesc={items[0].weather[0].description}
+                name={getWeatherIcon(items[0].weather[0].description)}
+              />
+            </li>
           )
-      })}
-      </div>
-    </div>
+        })}
+      </ul>
+    </section>
   )
 }
 

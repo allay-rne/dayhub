@@ -26,7 +26,7 @@ const TodoItem = (props) => {
 
   return (
     <li
-      className={classNames("todo__item todo-item", {
+      className={classNames("todo-item", {
         ['todo-item--done']: isDone
       })}
     >

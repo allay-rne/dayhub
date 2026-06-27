@@ -11,12 +11,12 @@ const Home = () => {
 
 
   return (
-    <div className="home">
+    <main className="home">
       <HomeHero
         img={!toggleTheme ? homeBanner : homeDarkBanner}
       />
       <HomeOverview />
-    </div>
+    </main>
   )
 }
 

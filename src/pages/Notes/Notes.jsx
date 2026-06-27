@@ -79,9 +79,9 @@ const Notes = () => {
               onChange={(event) => handleSearchChange(event.target.value)}
             />
 
-            <main className="notes__list">
+            <div className="notes__list">
               {searchedNotes.length === 0
-                ? <div className='notes__empty'>Nothing here yet..</div>
+                ? <p className='notes__empty'>Nothing here yet..</p>
                 :
                 <ul className="notes-item__list"> {searchedNotes.map((note) => (
                   <NoteItem
@@ -103,7 +103,7 @@ const Notes = () => {
                 ))}
                 </ul>
               }
-            </main>
+            </div>
           </div>
         </div>
       </section>

@@ -57,7 +57,7 @@ const RegisterForm = () => {
           </div>
           <div className="register-form__field-wrap">
           <Field
-            className={errors.email ? 'register-form__field--error' : ''}
+            className={errors.password ? 'register-form__field--error' : ''}
             label="Password"
             htmlFor="enter-password"
             id="enter-password"
@@ -79,7 +79,7 @@ const RegisterForm = () => {
           </div>
           <div className="register-form__field-wrap">
           <Field
-            className={errors.email ? 'register-form__field--error' : ''}
+            className={errors.confirmPassword ? 'register-form__field--error' : ''}
             label="Confirm password"
             htmlFor="confirm-password"
             id="confirm-password"

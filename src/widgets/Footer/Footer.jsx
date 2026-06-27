@@ -1,5 +1,6 @@
 import './Footer.scss'
 import Icon from '@/shared/ui/Icon/Icon'
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   const socialLinks = [
@@ -68,13 +69,13 @@ const Footer = () => {
 
         <div className="footer__extra-links">
           {infoLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               className="footer__extra-link"
-              href={link.href}
+              to={link.href}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -18,7 +18,7 @@ const AuthModalContainer = () => {
           className="auth-modal-container"
           onClick={handleClose}
         >
-          {isLogin ? <h1>Login</h1> : <h1>Register</h1>}
+          {isLogin ? <h2>Login</h2> : <h2>Register</h2>}
         <div
           className="auth-modal"
           onClick={(e) =>
