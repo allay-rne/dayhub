@@ -17,6 +17,8 @@ const LoginForm = () => {
     errors,
     handleSubmit,
     handleTogglePassword,
+    handleEmailChange,
+    handlePasswordChange,
   } = useLoginForm()
 
   return (
@@ -37,9 +39,13 @@ const LoginForm = () => {
           <div className="login-form__field-wrap">
             <Field
               className={errors.email ? 'login-form__field--error' : ''}
-              label="E-mail" htmlFor="enter-email" id="enter-email"
-              type="email" placeholder="Enter your email"
-              value={email} onChange={(e) => setEmail(e.target.value)}
+              label="E-mail"
+              htmlFor="enter-email"
+              id="enter-email"
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => handleEmailChange(e.target.value)}
             />
             {errors.email && <span className="login-form__error">{errors.email}</span>}
           </div>
@@ -51,7 +57,7 @@ const LoginForm = () => {
                 type={isPasswordVisible ? 'text' : 'password'}
                 placeholder="Enter your password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => handlePasswordChange(e.target.value)}
               >
               <Button
                 iconName={isPasswordVisible ? 'visibilityOff' : 'visibility'}

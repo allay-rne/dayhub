@@ -4,10 +4,19 @@ import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 const useLoginForm = () => {
 
   const { handleToggle, handleLogin } = useContext(AuthContext)
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState({email:'', password: ''})
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
+  const handleEmailChange = (value) => {
+    setEmail(value)
+    setErrors(prev => ({ ...prev, email: '' }))
+  }
+  const handlePasswordChange = (value) => {
+    setPassword(value)
+    setErrors(prev => ({ ...prev, password: '' }))
+  }
 
   const handleTogglePassword = useCallback(() => {
     setIsPasswordVisible(prev => !prev)
@@ -39,6 +48,8 @@ const useLoginForm = () => {
     errors,
     handleSubmit,
     handleTogglePassword,
+    handleEmailChange,
+    handlePasswordChange,
   }
 }
 
