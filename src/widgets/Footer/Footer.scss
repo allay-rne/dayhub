@@ -3,8 +3,8 @@
 
   background: linear-gradient(
     to bottom,
-    #6d6c3d,
-    #5f5d33
+    var(--color-footer-gradient-start),
+    var(--color-footer-gradient-end)
   );
 
   border-top: 1px solid rgba(255, 255, 255, 0.08);

@@ -35,13 +35,14 @@ import PersonCheckIcon from '@/shared/assets/icons/personCheck.svg?react'
 import CheckIcon from '@/shared/assets/icons/check.svg?react'
 import VisibilityIcon from '@/shared/assets/icons/visibility.svg?react'
 import VisibilityOffIcon from '@/shared/assets/icons/visibilityOff.svg?react'
-
+import MoonIcon from '@/shared/assets/icons/moon.svg?react'
 
 
 const icon = {
 
   /* header icon */
   sun: SunIcon,
+  moon: MoonIcon,
   user: UserIcon,
   personCheck: PersonCheckIcon,
   /* footer icon */

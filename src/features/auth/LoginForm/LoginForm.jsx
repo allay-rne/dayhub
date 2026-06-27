@@ -12,8 +12,6 @@ const LoginForm = () => {
     password,
     handleToggle,
     isPasswordVisible,
-    setEmail,
-    setPassword,
     errors,
     handleSubmit,
     handleTogglePassword,

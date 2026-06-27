@@ -12,10 +12,10 @@
   }
 
   &--favorite {
-    color: #d1b840;
+    color: var(--color-favorite);
 
     svg {
-      fill: #d1b840;
+      fill: var(--color-favorite);
     }
   }
 }

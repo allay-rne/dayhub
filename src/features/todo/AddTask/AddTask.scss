@@ -23,12 +23,12 @@
 
     padding: 6px 12px;
 
-    background: #fff0f0;
-    border: 1px solid #f8d7d7;
+    background: var(--color-error-bg);
+    border: var(--border-width-s) solid var(--color-error-border);
     border-radius: var(--border-radius-s);
 
     font-size: var(--font-size-small);
-    color: #d96c42;
+    color: var(--color-error-text);
 
     white-space: nowrap;
 
@@ -41,9 +41,9 @@
       width: 10px;
       height: 10px;
 
-      background: #fff0f0;
-      border-right: 1px solid #f8d7d7;
-      border-bottom: 1px solid #f8d7d7;
+      background: var(--color-error-bg);
+      border-right: var(--border-width-s) solid var(--color-error-border);
+      border-bottom: var(--border-width-s) solid var(--color-error-border);
 
       transform: rotate(45deg);
     }
@@ -51,8 +51,8 @@
 
   &__field--error {
     .input {
-      border-color: #e59c7f;
-      background-color: #fff5f2;
+      border-color: var(--color-error-input-border);
+      background-color: var(--color-error-input-bg);
     }
   }
 

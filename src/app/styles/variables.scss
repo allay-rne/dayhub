@@ -18,10 +18,17 @@
   --color-border-dark: #959191;
   --color-border: #ebe2d8;
   --color-border-light: #f3ede6;
+  --color-border-form: #000000;
 
   --color-success: #a8b089;
   --color-warning: #efc27d;
   --color-danger: #e59c7f;
+
+  --color-error-bg: #fff0f0;
+  --color-error-border: #f8d7d7;
+  --color-error-text: #d96c42;
+  --color-error-input-border: #e59c7f;
+  --color-error-input-bg: #fff5f2;
 
   --tag-high-bg: #f8d7c9;
   --tag-high-text: #d96c42;
@@ -36,6 +43,20 @@
   --color-icon-muted: #d8c5aa;
 
   --color-button-filter: #a89c9a;
+
+  --color-favorite: #d1b840;
+
+  --color-header-bg: rgba(109, 108, 61, 0.7);
+
+  --color-footer-gradient-start: #6d6c3d;
+  --color-footer-gradient-end: #5f5d33;
+
+  --color-shadow-modal: rgb(149, 145, 145);
+
+  --color-filter-active-bg: #ede5d8;
+
+  --color-toggle-track: #d7b07a;
+  --color-toggle-thumb: #fdfaf6;
 
   --gradient-primary: linear-gradient(
     90deg,
@@ -57,7 +78,6 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-
   --font-size-big: 52px;
   --font-size-base: 16px;
   --font-size-small: 14px;
@@ -78,7 +98,6 @@
   --border-width-m: 2px;
   --border-width-l: 4px;
   --border-width-xl: 8px;
-
 
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;

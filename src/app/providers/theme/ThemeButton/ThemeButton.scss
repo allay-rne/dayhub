@@ -1,0 +1,54 @@
+.theme-button {
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    cursor: pointer;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    inset: 0;
+    background: var(--color-toggle-track);
+    border-radius: 999px;
+    transition: background 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      background: var(--color-toggle-thumb);
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+  }
+  input:checked ~ &__slider::before {
+    transform: translateY(-50%) translateX(22px);
+  }
+
+  .icon {
+    color: var(--color-icon);
+    svg {
+      fill: var(--color-icon);
+      stroke: var(--color-icon);
+    }
+  }
+}

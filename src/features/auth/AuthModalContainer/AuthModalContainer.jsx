@@ -4,6 +4,7 @@ import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 import LoginForm from "@/features/auth/LoginForm";
 import Button from "@/shared/ui/Button/index.js";
 import RegisterForm from "@/features/auth/RegisterForm/index.js";
+import ThemeButton from "@/app/providers/theme/ThemeButton/index.js";
 
 const AuthModalContainer = () => {
 
@@ -17,12 +18,14 @@ const AuthModalContainer = () => {
              onClick={handleClose}
         >
           {isLogin ? <h1>Login</h1> : <h1>Register</h1>}
-        <div className="auth-modal" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="auth-modal"
+          onClick={(e) =>
+            e.stopPropagation()}>
           {isLogin ? <LoginForm /> : <RegisterForm />}
         </div>
           <div className="auth-modal-container__theme">
-            <p>Light Theme</p>
-            <Button />
+            <ThemeButton />
           </div>
         </div>
       )}

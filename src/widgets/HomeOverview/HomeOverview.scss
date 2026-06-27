@@ -8,9 +8,7 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
-
     padding: 0 100px;
-
 
     :nth-child(odd) {
       .home-card__main-value {
@@ -24,7 +22,6 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
-
     padding: 0 50px;
   }
 

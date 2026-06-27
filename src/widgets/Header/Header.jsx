@@ -5,6 +5,7 @@ import Button from "@/shared/ui/Button";
 import {useContext} from "react";
 import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 import UserDropdown from "@/features/auth/UserDropdown/index.js";
+import ThemeButton from "@/app/providers/theme/ThemeButton/index.js";
 
 const Header = (props) => {
   const {
@@ -72,14 +73,7 @@ const Header = (props) => {
         </nav>
 
         <div className="header__actions">
-          <Button
-            className="header__button"
-            label="Toggle theme"
-            isLabelHidden
-            mode="transparent"
-            iconName="sun"
-            iconPosition='before'
-          />
+         <ThemeButton />
 
           <Button
             className="header__button"
