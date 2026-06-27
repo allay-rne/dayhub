@@ -1,4 +1,4 @@
-import {useContext, useState} from "react";
+import {useCallback, useContext, useState} from "react";
 import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 
 const useLoginForm = () => {
@@ -7,7 +7,11 @@ const useLoginForm = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState({email:'', password: ''})
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
+  const handleTogglePassword = useCallback(() => {
+    setIsPasswordVisible(prev => !prev)
+  }, [])
   const handleSubmit = () => {
     const clearEmail = email.trim()
     const isEmailEmpty = clearEmail.length === 0
@@ -29,10 +33,12 @@ const useLoginForm = () => {
     email,
     password,
     handleToggle,
+    isPasswordVisible,
     setEmail,
     setPassword,
     errors,
     handleSubmit,
+    handleTogglePassword,
   }
 }
 

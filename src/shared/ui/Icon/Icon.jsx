@@ -33,6 +33,9 @@ import VkIcon from '@/shared/assets/icons/vk.svg?react'
 import AppleIcon from '@/shared/assets/icons/apple.svg?react'
 import PersonCheckIcon from '@/shared/assets/icons/personCheck.svg?react'
 import CheckIcon from '@/shared/assets/icons/check.svg?react'
+import VisibilityIcon from '@/shared/assets/icons/visibility.svg?react'
+import VisibilityOffIcon from '@/shared/assets/icons/visibilityOff.svg?react'
+
 
 
 const icon = {
@@ -77,7 +80,9 @@ const icon = {
   vk: VkIcon,
   apple: AppleIcon,
   check: CheckIcon,
-
+  /* auth icon */
+  visibility: VisibilityIcon,
+  visibilityOff: VisibilityOffIcon,
 }
 
 const Icon = (props) => {

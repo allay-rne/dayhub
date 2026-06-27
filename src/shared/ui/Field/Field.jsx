@@ -7,6 +7,7 @@ const Field = (props) => {
     className,
     label,
     htmlFor,
+    children,
     ...inputProps
   } = props
 
@@ -17,10 +18,12 @@ const Field = (props) => {
       >
         {label}
       </label>
-      <Input
-        {...inputProps}
-      />
-
+      <div className="field__input-wrap">
+        <Input
+          {...inputProps}
+        />
+        {children}
+      </div>
     </div>
   )
 }
