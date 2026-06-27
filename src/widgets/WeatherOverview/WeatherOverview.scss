@@ -15,6 +15,12 @@
     padding: 0 50px;
   }
 
+  &__title{
+    padding: 24px 24px 0;
+    font-size: 30px;
+    font-weight: var(--font-weight-semibold);
+  }
+
   &__direction {
     display: flex;
     align-items: center;
@@ -29,10 +35,4 @@
   &__comp {
     font-size: 24px;
   }
-}
-
-h2 {
-  padding: 24px 24px 0;
-  font-size: 30px;
-  font-weight: var(--font-weight-semibold);
 }

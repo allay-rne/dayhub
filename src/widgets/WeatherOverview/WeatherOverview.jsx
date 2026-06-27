@@ -19,7 +19,7 @@ const WeatherOverview = () => {
 
   return (
       <section className="weather-overview">
-        <h2>Quick overview</h2>
+        <h2 className="weather-overview__title">Quick overview</h2>
         <div className="weather-overview__card">
           <div className="weather-overview__card-item">
             <OverviewCard

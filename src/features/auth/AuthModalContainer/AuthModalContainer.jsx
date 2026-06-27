@@ -14,8 +14,9 @@ const AuthModalContainer = () => {
   return (
     <>
       {open && (
-        <div className="auth-modal-container"
-             onClick={handleClose}
+        <div
+          className="auth-modal-container"
+          onClick={handleClose}
         >
           {isLogin ? <h1>Login</h1> : <h1>Register</h1>}
         <div
@@ -24,7 +25,10 @@ const AuthModalContainer = () => {
             e.stopPropagation()}>
           {isLogin ? <LoginForm /> : <RegisterForm />}
         </div>
-          <div className="auth-modal-container__theme">
+          <div
+            className="auth-modal-container__theme"
+            onClick={(e) => e.stopPropagation()}
+          >
             <ThemeButton />
           </div>
         </div>

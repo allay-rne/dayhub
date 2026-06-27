@@ -2,8 +2,9 @@ import {useCallback, useEffect, useState} from "react";
 
 const useTheme = () => {
 
-  const [toggleTheme, setToggleTheme] = useState(!!localStorage.getItem('theme'))
-
+  const [toggleTheme, setToggleTheme] = useState(
+    JSON.parse(localStorage.getItem('theme') ?? 'false')
+  )
   const handleToggleTheme = useCallback(() => {
     setToggleTheme(prev => {
       const newValue = !prev
