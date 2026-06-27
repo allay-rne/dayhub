@@ -1,14 +1,16 @@
-import {useCallback, useState} from "react";
+import {useCallback, useContext, useState} from "react";
 import useNotes from "@/entities/notes/model/useNotes.js";
 import Hero from "@/shared/ui/Hero/index.js";
 import Button from "@/shared/ui/Button/index.js";
 import Field from "@/shared/ui/Field/index.js";
-import todoBanner from "@/shared/assets/image/Hero/notesLightHero.png";
+import noteBanner from "@/shared/assets/image/Hero/notesLightHero.png";
+import noteDarkBanner from "@/shared/assets/image/Hero/notesDarkHero.png"
 import NoteItem from "@/entities/notes/ui/NoteItem/index.js";
 import NoteSide from "@/widgets/NoteSide/index.js";
 import Modal from "@/shared/ui/Modal/index.js";
 import AddNote from "@/features/notes/AddNote/index.js";
 import './Notes.scss'
+import {ThemeContext} from "@/app/providers/theme/model/ThemeContext.jsx";
 
 
 const Notes = () => {
@@ -27,9 +29,10 @@ const Notes = () => {
     handleEditNotes,
   } = useNotes()
 
+  const { toggleTheme } = useContext(ThemeContext)
+
   const [openModal, setOpenModal] = useState(false)
   const [selectedNote, setSelectedNote] = useState(null)
-
 
   const handleOpenModal = useCallback(() => {
     setOpenModal(true)
@@ -46,7 +49,7 @@ const Notes = () => {
   return (
     <>
       <Hero
-        img={todoBanner}
+        img={!toggleTheme ? noteBanner : noteDarkBanner}
         title="Notes"
         subtitle="Capture thoughts, ideas and everything in between"
       >

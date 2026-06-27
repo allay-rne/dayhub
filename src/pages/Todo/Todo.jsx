@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useContext, useRef} from "react";
 import {TransitionGroup, CSSTransition} from 'react-transition-group'
 import useTasks from "@/entities/todo/model/useTasks.js";
 import TodoItem from "@/entities/todo/ui/TodoItem/index.js";
@@ -7,6 +7,8 @@ import AddTask from "@/features/todo/AddTask/index.js";
 import TodoFilter from "@/features/todo/TodoFilter/index.js";
 import Hero from "@/shared/ui/Hero/index.js";
 import todoBanner from '@/shared/assets/image/Hero/todoLightHero.png'
+import todoDarkBanner from '@/shared/assets/image/Hero/todoDarckTheme.png'
+import {ThemeContext} from "@/app/providers/theme/model/ThemeContext.jsx";
 import "./Todo.scss";
 
 
@@ -23,12 +25,15 @@ const Todo = () => {
     handleEditTask,
   } = useTasks()
 
+  const { toggleTheme } = useContext(ThemeContext)
+
+
   const nodeRefs = useRef({})
 
   return (
     <div>
       <Hero
-        img={todoBanner}
+        img={!toggleTheme ? todoBanner : todoDarkBanner}
         title="My ToDo list"
         subtitle="Order in affairs is the result in life"
       />

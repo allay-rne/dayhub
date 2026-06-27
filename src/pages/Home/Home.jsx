@@ -1,14 +1,19 @@
 import HomeHero from "@/widgets/HomeHero/index.js";
 import homeBanner from "@/shared/assets/image/Hero/homeLightHero.png"
+import homeDarkBanner from "@/shared/assets/image/Hero/homeDarkHero.png"
 import HomeOverview from "@/widgets/HomeOverview/index.js";
+import {useContext} from "react";
+import {ThemeContext,} from "@/app/providers/theme/model/ThemeContext.jsx";
 
 const Home = () => {
+
+  const { toggleTheme } = useContext(ThemeContext)
 
 
   return (
     <div className="home">
       <HomeHero
-        img={homeBanner}
+        img={!toggleTheme ? homeBanner : homeDarkBanner}
       />
       <HomeOverview />
     </div>
