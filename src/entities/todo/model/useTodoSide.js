@@ -8,7 +8,6 @@ const useTodoSide = (tasks) => {
     setIsCalendarOpen(!isCalendarOpen)
   }
 
-
   const today = new Date()
     .toLocaleDateString('en-US', {month: 'short', day: 'numeric'})
 

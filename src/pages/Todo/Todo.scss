@@ -23,6 +23,18 @@
     text-align: center;
     color: var(--color-text-secondary);
   }
+
+  @include mobile {
+    flex-direction: column;
+
+    .todo__main {
+      order: 2;
+    }
+
+    .side {
+      order: 1;
+    }
+  }
 }
 
 .todo-item-enter {

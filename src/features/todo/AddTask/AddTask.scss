@@ -5,7 +5,7 @@
   align-items: center;
   gap: 20px;
 
-  padding: 24px;
+  padding: fluid(24, 16);
 
   border: var(--border-width-s) solid var(--color-border);
   border-radius: var(--border-radius-m);
@@ -69,6 +69,14 @@
 
     &:focus {
       border-color: var(--color-primary);
+    }
+  }
+
+  @include mobile {
+    flex-wrap: wrap;
+
+    .field {
+      flex: 1 1 100%;
     }
   }
 }

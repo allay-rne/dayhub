@@ -70,7 +70,7 @@ const TodoSide = (props) => {
         />
       </div>
 
-      <div className="side-calendar">
+      <div className="side-calendar hidden-mobile">
         <div className="side-calendar__header">
           <h3 className="side-calendar__heading">Today</h3>
           <Icon

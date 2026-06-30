@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    padding: 0 100px;
+    padding: 0 fluid(100, 50);
 
     :nth-child(odd) {
       .home-card__main-value {
@@ -16,16 +16,12 @@
       }
     }
 
-  }
-
-  &__card-item {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    padding: 0 50px;
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__button {
-    width: 220px;
+    width: fluid(220, 140);
   }
 }

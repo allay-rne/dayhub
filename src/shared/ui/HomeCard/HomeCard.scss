@@ -4,8 +4,8 @@
   gap: 4px;
 
   padding: 24px;
-  width: 270px;
-  height: 250px;
+  width: fluid(270, 180);
+  height: auto;
 
   background-color: var(--color-surface);
   border-radius: var(--border-radius-s);
@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    }
+  }
 
   &__icon {
     display: flex;
@@ -43,7 +43,7 @@
 
   &__header-title {
     margin: 0;
-    font-size: 36px;
+    font-size: fluid(36, 18);
     font-weight: var(--font-weight-regular);
   }
 
@@ -55,12 +55,12 @@
   }
 
   &__main-value {
-    font-size: 48px;
+    font-size: fluid(48, 24);
     font-weight: var(--font-weight-semibold);
   }
 
   &__main-subtitle {
-    font-size: 16px;
+    font-size: fluid(16, 12);
     font-weight: var(--font-weight-regular);
     white-space: nowrap;
     margin-bottom: 14px;
@@ -70,5 +70,34 @@
     display: flex;
     justify-content: flex-end;
     flex: 1;
+  }
+
+  @include mobile {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+
+    padding: 16px;
+
+    &__header {
+      flex: 1 1 100%;
+    }
+
+    &__main {
+      align-items: center;
+      gap: 8px;
+    }
+
+    &__main-subtitle {
+      margin-bottom: 0;
+    }
+
+    &__footer {
+      flex: 1;
+      justify-content: flex-end;
+      align-items: center;
+    }
   }
 }

@@ -73,4 +73,30 @@
 
     opacity: 0.5;
   }
+
+  @include mobile {
+    flex-wrap: wrap;
+
+    &::after {
+      content: '';
+      order: 2;
+      flex-basis: 100%;
+    }
+
+    &__checkbox {
+      order: 0;
+    }
+
+    &__label {
+      order: 1;
+    }
+
+    &__date,
+    &__priority,
+    .add-task__date,
+    .add-task__select,
+    .button {
+      order: 3;
+    }
+  }
 }

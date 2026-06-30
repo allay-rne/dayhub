@@ -4,13 +4,17 @@
   gap: 15px;
   width: 400px;
 
+  @include mobile {
+    width: 100%;
+  }
+
   .side-stats {
     display: flex;
     flex-direction: column;
     align-self: start;
     gap: 20px;
 
-    padding: 24px;
+    padding: fluid(24, 16);
 
     border: var(--border-width-s) solid var(--color-border);
     border-radius: var(--border-radius-m);
@@ -41,16 +45,16 @@
       align-items: center;
       justify-content: center;
 
-      width: 130px;
-      height: 130px;
+      width: fluid(130, 100);
+      height: fluid(130, 100);
 
       border-radius: var(--border-radius-full);
 
       &::after {
         content: '';
         position: absolute;
-        width: 115px;
-        height: 115px;
+        width: fluid(115, 85);
+        height: fluid(115, 85);
         background-color: var(--color-surface);
         border-radius: var(--border-radius-full);
       }
@@ -62,11 +66,11 @@
     }
 
     &__percent {
-      font-size: 35px;
+      font-size: fluid(35, 24);
     }
 
     &__label {
-      font-size: var(--font-size-small);
+      font-size: fluid(14, 11);
     }
 
     &__count {

@@ -4,6 +4,8 @@
   --color-surface: #fdfaf6;
   --color-surface-2: #f4eee6;
 
+  --color-mobile-menu-bg: rgba(109, 108, 61, 1);
+
   --color-primary: #7c7b45;
   --color-primary-hover: #918c53;
   --color-primary-light: #a2a06b;
@@ -103,6 +105,8 @@
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
 
+  --container-width: 1280px;
+  --container-padding-x: clamp(20px, 4vw, 40px);
 }
 
 [data-theme="dark"] {
