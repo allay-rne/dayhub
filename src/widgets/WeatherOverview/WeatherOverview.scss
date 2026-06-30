@@ -3,6 +3,10 @@
   position: relative;
   top: -350px;
 
+  @include mobile {
+    top: 0;
+  }
+
   &__card {
     display: flex;
   }
@@ -12,12 +16,18 @@
     justify-content: space-between;
     gap: 15px;
 
-    padding: 0 50px;
+    padding: 0 fluid(50, 20);
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0 fluid(40, 20);
+    }
   }
 
   &__title{
-    padding: 24px 24px 0;
-    font-size: 30px;
+    padding: fluid(24, 16) fluid(24, 16) 0;
+    font-size: fluid(30, 20);
     font-weight: var(--font-weight-semibold);
   }
 
@@ -29,10 +39,10 @@
   }
 
   &__cloud {
-    font-size: 14px;
+    font-size: fluid(14, 12);
   }
 
   &__comp {
-    font-size: 24px;
+    font-size: fluid(24, 18);
   }
 }

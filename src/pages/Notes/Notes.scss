@@ -11,6 +11,10 @@
     align-items: flex-start;
     flex: 1 2;
     gap: 18px;
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__main {

@@ -8,6 +8,10 @@
     gap: 16px;
     list-style: none;
     padding: 0;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__item {
@@ -17,7 +21,7 @@
 
     padding: 16px;
     margin-bottom: 16px;
-    height: 224px;
+    height: fluid(224, 185);
     break-inside: avoid;
 
     background-color: var(--color-surface);
@@ -52,15 +56,15 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 2px 8px;
+    padding: fluid(2, 1) fluid(8, 6);
     border-radius: 20px;
     border: 1px solid var(--color-primary);
-    font-size: 12px;
+    font-size: fluid(12, 10);
     color: var(--color-primary);
   }
 
   &__title {
-    font-size: 18px;
+    font-size: fluid(18, 14);
     font-weight: 600;
   }
 
@@ -89,6 +93,10 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+
+    @include mobile {
+      -webkit-line-clamp: 2;
+    }
   }
 
   &__actions {

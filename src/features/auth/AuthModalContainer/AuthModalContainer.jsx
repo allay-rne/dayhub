@@ -2,7 +2,6 @@ import './AuthModalContainer.scss'
 import {useContext} from "react";
 import {AuthContext} from "@/entities/user/model/AuthContext.jsx";
 import LoginForm from "@/features/auth/LoginForm";
-import Button from "@/shared/ui/Button/index.js";
 import RegisterForm from "@/features/auth/RegisterForm/index.js";
 import ThemeButton from "@/app/providers/theme/ThemeButton/index.js";
 

@@ -3,9 +3,9 @@
   flex-direction: column;
   gap: 4px;
 
-  padding: 24px;
-  width: 270px;
-  height: 250px;
+  padding: fluid(24, 16);
+  width: 100%;
+  min-height: fluid(250, 200);
 
   background-color: var(--color-surface);
   border-radius: var(--border-radius-s);
@@ -25,8 +25,8 @@
     overflow: hidden;
     padding: 4px;
 
-    width: 44px;
-    height: 44px;
+    width: fluid(44, 36);
+    height: fluid(44, 36);
     border-radius: var(--border-radius-s);
 
     span {
@@ -36,32 +36,31 @@
     }
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: fluid(24, 18);
+      height: fluid(24, 18);
     }
   }
 
   &__header-title {
     margin: 0;
-    font-size: 24px;
+    font-size: fluid(24, 16);
     font-weight: var(--font-weight-regular);
   }
 
   &__main-value {
-    font-size: 32px;
+    font-size: fluid(32, 22);
     font-weight: var(--font-weight-semibold);
   }
 
   &__main-subtitle {
-    font-size: 16px;
+    font-size: fluid(16, 12);
     font-weight: var(--font-weight-regular);
   }
 
   &__footer {
-
-    height: 70px;
-    margin: 0 0 -24px;
-    padding: 24px;
+    min-height: fluid(70, 56);
+    margin: 0 0 fluid(-24, -16);
+    padding: fluid(24, 16);
 
     border: var(--border-width-s) solid var(--color-border);
     border-radius: var(--border-radius-xs) var(--border-radius-s);
