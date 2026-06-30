@@ -1,6 +1,7 @@
 import './Button.scss'
 import classNames from 'classnames'
 import Icon from "@/shared/ui/Icon"
+import {Link} from "react-router-dom";
 
 const Button = (props) => {
   const {
@@ -21,8 +22,11 @@ const Button = (props) => {
 
 
   const isLink = href !== undefined
-  const Component = isLink ? 'a' : 'button'
-  const linkProps = {href, target}
+  const isExternal = href?.startsWith('http') || href?.startsWith('//')
+  const Component = isExternal ? 'a' : isLink ? Link : 'button'
+  const linkProps = isExternal
+    ? { href, target }
+    : { to: href, target }
   const buttonProps = {type}
   const specificProps = isLink ? linkProps : buttonProps
   const title = isLabelHidden ? label : undefined

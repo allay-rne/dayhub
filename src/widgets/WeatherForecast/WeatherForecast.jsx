@@ -8,12 +8,19 @@ import {getWeatherIcon} from "@/entities/weather/lib/getWeatherIcon.js";
 const WeatherForecast = () => {
 
   const {
+    error,
     weatherByDay,
+    isLoading,
   } = useForecast()
 
   return (
     <section className="weather-forecast">
       <h3 className="weather-forecast__title">5-day forecast</h3>
+      {isLoading ? (
+          <p>Loading forecast...</p>
+        ) : error ? (
+          <p>Failed to load forecast</p>
+        ) : (
       <ul className="weather-forecast__list">
         {Object.entries(weatherByDay).slice(0, 5).map(([date, items]) => {
           const {tempMax, tempMin} = getDayTemps(items)
@@ -30,6 +37,7 @@ const WeatherForecast = () => {
           )
         })}
       </ul>
+      )}
     </section>
   )
 }
