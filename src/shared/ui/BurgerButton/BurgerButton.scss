@@ -1,9 +1,6 @@
 .burger-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
+  @include flex-center;
+  @include square(44px);
   padding: 0;
   background-color: transparent;
   border: 2px solid var(--color-icon);

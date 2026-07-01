@@ -95,12 +95,8 @@
   }
 
   &__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
+    @include flex-center;
+    @include square(42px);
 
     padding: 0;
     border: none;
@@ -108,8 +104,8 @@
     cursor: pointer;
 
     svg {
-      width: 32px;
-      height: 32px;
+      @include square(32px);
+
       color: var(--color-icon);
       fill: var(--color-icon);
       transition: color var(--transition-fast),

@@ -12,20 +12,16 @@
   box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
 
   &__inner {
-    display: flex;
+    @include flex-center;
+
     align-items: flex-end;
-    justify-content: center;
-
     padding-inline: 20px;
-
     font-family: var(--font-family-base), sans-serif;
     font-size: var(--font-size-mini);
   }
 
   &__socials {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
 
     gap: 24px;
   }
@@ -42,8 +38,7 @@
 
   &__icon {
     svg {
-      width: 36px;
-      height: 36px;
+      @include square(36px);
 
       color: var(--color-icon);
       fill: var(--color-icon);

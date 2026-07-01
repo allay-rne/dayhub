@@ -38,8 +38,7 @@
       bottom: -6px;
       left: 20px;
 
-      width: 10px;
-      height: 10px;
+      @include square(10px);
 
       background: var(--color-error-bg);
       border-right: var(--border-width-s) solid var(--color-error-border);

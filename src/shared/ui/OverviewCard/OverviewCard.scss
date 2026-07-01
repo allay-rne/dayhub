@@ -26,9 +26,7 @@
   }
 
   &__icon-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
 
     overflow: hidden;
     padding: 4px;

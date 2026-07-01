@@ -17,9 +17,9 @@
   &__link {
     color: var(--color-icon);
     svg {
+      @include square(26px);
+
       fill: var(--color-icon);
-      width: 26px;
-      height: 26px;
     }
   }
 
@@ -76,8 +76,7 @@
       bottom: -6px;
       left: 20px;
 
-      width: 10px;
-      height: 10px;
+      @include square(10px);
 
       background: var(--color-error-bg);
       border-right: var(--border-width-s) solid var(--color-error-border);

@@ -39,11 +39,10 @@
     }
 
     &__round {
+      @include flex-center;
+
       position: relative;
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
 
       width: fluid(130, 100);
       height: fluid(130, 100);
@@ -74,11 +73,9 @@
     }
 
     &__count {
+      @include square(10px);
+
       display: inline-block;
-
-      width: 10px;
-      height: 10px;
-
       border-radius: var(--border-radius-full);
     }
 

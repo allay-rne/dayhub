@@ -1,10 +1,6 @@
 .icon {
-  width: 28px;
-  height: 28px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @include square(28px);
+  @include flex-center($isInline: true);
 
   svg {
     width: 100%;
@@ -21,6 +17,5 @@
 }
 
 .button__icon {
-  width: 28px;
-  height: 28px;
+  @include square(28px);
 }

@@ -18,15 +18,11 @@
   }
 
   &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
+    @include square(44px);
 
     overflow: hidden;
     padding: 4px;
-
-    width: 44px;
-    height: 44px;
     border-radius: var(--border-radius-s);
 
     span {
@@ -36,8 +32,7 @@
     }
 
     svg {
-      width: 52px;
-      height: 52px;
+      @include square(52px);
     }
   }
 

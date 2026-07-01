@@ -8,9 +8,8 @@
   }
 
   &__card {
-    display: flex;
+    @include flex-center;
     width: 100%;
-    justify-content: center;
   }
 
   &__card-item {
@@ -40,8 +39,7 @@
   }
 
   &__direction {
-    display: flex;
-    align-items: center;
+    @include flex-center;
     justify-content: space-between;
     width: 100%;
   }

@@ -91,9 +91,7 @@
   }
 
   &__icon-sun {
-    width: 52px;
-    height: 52px;
-
+    @include square(52px);
     color: var(--color-accent);
   }
 
