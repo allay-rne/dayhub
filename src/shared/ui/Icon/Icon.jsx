@@ -105,9 +105,10 @@ const Icon = (props) => {
         {'icon--favorite': isFavorite}
       )}
       aria-label={ariaLabel}
+      aria-hidden={!ariaLabel}
       style={style}
     >
-      <Component />
+      <Component aria-hidden="true" />
     </span>
   )
 }

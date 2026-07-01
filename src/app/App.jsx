@@ -1,4 +1,5 @@
 import {Routes, Route, useLocation} from 'react-router-dom'
+import {HelmetProvider} from 'react-helmet-async'
 import Header from "@/widgets/Header";
 import Footer from "@/widgets/Footer";
 import Todo from "@/pages/Todo";
@@ -14,33 +15,35 @@ function App() {
   const location = useLocation()
 
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        <div>
-          <Header url={location.pathname} />
-          <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-            />
-            <Route
-              path="/todo"
-              element={<Todo />}
-            />
-            <Route
-              path="/notes"
-              element={<Notes />}
-            />
-            <Route
-              path="/weather"
-              element={<Weather />}
-            />
-          </Routes>
-          <Footer />
-          <AuthModalContainer />
-        </div>
-      </AuthProvider>
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <div>
+            <Header url={location.pathname} />
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/todo"
+                element={<Todo />}
+              />
+              <Route
+                path="/notes"
+                element={<Notes />}
+              />
+              <Route
+                path="/weather"
+                element={<Weather />}
+              />
+            </Routes>
+            <Footer />
+            <AuthModalContainer />
+          </div>
+        </AuthProvider>
+      </ThemeProvider>
+    </HelmetProvider>
   )
 }
 

@@ -9,6 +9,7 @@ import Hero from "@/shared/ui/Hero/index.js";
 import todoBanner from '@/shared/assets/image/Hero/todoLightHero.png'
 import todoDarkBanner from '@/shared/assets/image/Hero/todoDarckTheme.png'
 import {ThemeContext} from "@/app/providers/theme/model/ThemeContext.jsx";
+import {Helmet} from "react-helmet-async";
 import "./Todo.scss";
 
 
@@ -25,71 +26,76 @@ const Todo = () => {
     handleEditTask,
   } = useTasks()
 
-  const { toggleTheme } = useContext(ThemeContext)
+  const {toggleTheme} = useContext(ThemeContext)
 
 
   const nodeRefs = useRef({})
 
   return (
-    <main>
-      <Hero
-        img={!toggleTheme ? todoBanner : todoDarkBanner}
-        title="My ToDo list"
-        subtitle="Order in affairs is the result in life"
-      />
-      <div className="todo">
-        <div className="todo__main">
-          <AddTask
-            onAddTask={handleAddTask}
-          />
-          <TodoFilter
-            onFilter={handleFilterChange}
-            onSearch={handleSearchChange}
-          />
-          {tasks.length === 0
-            ? <p className='todo__empty'>Not a single task...</p>
-            : searchedTasks.length === 0
-              ? <p className='todo__empty'>The filter worked too well.</p>
-              : <TransitionGroup
-                component="ul"
-                className="todo__list"
-              >
-                {searchedTasks.map(({id, title, isDone, date, priority}) => {
-                  if (!nodeRefs.current[id]) {
-                    nodeRefs.current[id] = React.createRef()
-                  }
-                  const nodeRef = nodeRefs.current[id]
-                  return (
-                    <CSSTransition
-                      key={id}
-                      timeout={300}
-                      classNames="todo-item"
-                      nodeRef={nodeRef}
-                    >
-                      <div ref={nodeRef}>
-                        <TodoItem
-                          id={id}
-                          title={title}
-                          isDone={isDone}
-                          date={date}
-                          priority={priority}
-                          onDelete={handleDeleteTask}
-                          onToggle={handleToggleTask}
-                          onEdit={handleEditTask}
-                        />
-                      </div>
-                    </CSSTransition>
-                  )
-                })}
-              </TransitionGroup>
-          }
-        </div>
-        <TodoSide
-          onDeleteAll={handleDeleteAll}
-          tasks={tasks}
+    <>
+      <Helmet>
+        <title>DayHub | ToDo</title>
+      </Helmet>
+      <main>
+        <Hero
+          img={!toggleTheme ? todoBanner : todoDarkBanner}
+          title="My ToDo list"
+          subtitle="Order in affairs is the result in life"
         />
-      </div>
-    </main>
+        <div className="todo">
+          <div className="todo__main">
+            <AddTask
+              onAddTask={handleAddTask}
+            />
+            <TodoFilter
+              onFilter={handleFilterChange}
+              onSearch={handleSearchChange}
+            />
+            {tasks.length === 0
+              ? <p className='todo__empty'>Not a single task...</p>
+              : searchedTasks.length === 0
+                ? <p className='todo__empty'>The filter worked too well.</p>
+                : <TransitionGroup
+                  component="ul"
+                  className="todo__list"
+                >
+                  {searchedTasks.map(({id, title, isDone, date, priority}) => {
+                    if (!nodeRefs.current[id]) {
+                      nodeRefs.current[id] = React.createRef()
+                    }
+                    const nodeRef = nodeRefs.current[id]
+                    return (
+                      <CSSTransition
+                        key={id}
+                        timeout={300}
+                        classNames="todo-item"
+                        nodeRef={nodeRef}
+                      >
+                        <div ref={nodeRef}>
+                          <TodoItem
+                            id={id}
+                            title={title}
+                            isDone={isDone}
+                            date={date}
+                            priority={priority}
+                            onDelete={handleDeleteTask}
+                            onToggle={handleToggleTask}
+                            onEdit={handleEditTask}
+                          />
+                        </div>
+                      </CSSTransition>
+                    )
+                  })}
+                </TransitionGroup>
+            }
+          </div>
+          <TodoSide
+            onDeleteAll={handleDeleteAll}
+            tasks={tasks}
+          />
+        </div>
+      </main>
+    </>
   )
 }
 

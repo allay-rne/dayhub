@@ -9,7 +9,11 @@ const Modal = (props) => {
   } = props
 
   return (
-    <div className={classNames(className, "modal")}>
+    <div
+      className={classNames(className, "modal")}
+      role="dialog"
+      aria-modal="true"
+    >
       <div className="modal__inner">
         {children}
       </div>

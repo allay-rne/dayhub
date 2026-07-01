@@ -9,9 +9,9 @@ import NoteItem from "@/entities/notes/ui/NoteItem/index.js";
 import NoteSide from "@/widgets/NoteSide/index.js";
 import Modal from "@/shared/ui/Modal/index.js";
 import AddNote from "@/features/notes/AddNote/index.js";
-import './Notes.scss'
 import {ThemeContext} from "@/app/providers/theme/model/ThemeContext.jsx";
-
+import {Helmet} from "react-helmet-async";
+import './Notes.scss'
 
 const Notes = () => {
 
@@ -29,7 +29,7 @@ const Notes = () => {
     handleEditNotes,
   } = useNotes()
 
-  const { toggleTheme } = useContext(ThemeContext)
+  const {toggleTheme} = useContext(ThemeContext)
 
   const [openModal, setOpenModal] = useState(false)
   const [selectedNote, setSelectedNote] = useState(null)
@@ -48,6 +48,9 @@ const Notes = () => {
 
   return (
     <>
+      <Helmet>
+        <title>DayHub | Notes</title>
+      </Helmet>
       <Hero
         img={!toggleTheme ? noteBanner : noteDarkBanner}
         title="Notes"
