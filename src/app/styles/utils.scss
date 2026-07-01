@@ -23,6 +23,18 @@
   }
 }
 
+.visible-laptop-s {
+  @include laptop-s-above {
+    display: none !important;
+  }
+}
+
+.hidden-laptop-s {
+  @include laptop-s {
+    display: none !important;
+  }
+}
+
 .visible-mobile {
   @include mobile-above {
     display: none !important;

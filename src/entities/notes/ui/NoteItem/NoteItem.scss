@@ -9,6 +9,10 @@
     list-style: none;
     padding: 0;
 
+    @include laptop-s {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @include mobile {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -55,7 +59,7 @@
   &__tag {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     padding: fluid(2, 1) fluid(8, 6);
     border-radius: 20px;
     border: 1px solid var(--color-primary);
@@ -93,6 +97,10 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+
+    @include laptop-s {
+      -webkit-line-clamp: 2;
+    }
 
     @include mobile {
       -webkit-line-clamp: 2;

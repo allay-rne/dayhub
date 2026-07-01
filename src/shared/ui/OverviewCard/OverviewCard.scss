@@ -11,6 +11,14 @@
   border-radius: var(--border-radius-s);
   box-shadow: var(--shadow-l);
 
+  @include laptop-s {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+
   &__header {
     display: flex;
     align-items: center;

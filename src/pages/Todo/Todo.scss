@@ -24,6 +24,19 @@
     color: var(--color-text-secondary);
   }
 
+  @include laptop-s {
+    flex-direction: column;
+
+    .todo__main {
+      order: 2;
+    }
+
+    .side {
+      order: 1;
+      width: 100%;
+    }
+  }
+
   @include mobile {
     flex-direction: column;
 

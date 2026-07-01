@@ -72,7 +72,19 @@
     }
   }
 
+  @include laptop-s {
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .field {
+      flex: 1 1 100%;
+    }
+  }
+
   @include mobile {
+    justify-content: center;
+    width: 100%;
     flex-wrap: wrap;
 
     .field {

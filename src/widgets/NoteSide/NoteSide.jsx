@@ -65,7 +65,7 @@ const NoteSide = (props) => {
           </li>
         ))}
       </ul>
-      <div className="notes-filter__motivation hidden-mobile">
+      <div className="notes-filter__motivation hidden-mobile hidden-laptop-s">
         <img
           src={flowerImg}
           alt="motivation"

@@ -4,17 +4,31 @@
 
   margin: -350px 70px 40px;
 
+  @include laptop-s {
+    margin: -350px 0 40px;
+  }
+
   @include mobile {
-    margin: 0 fluid(20, 16) 40px;
+    margin: 0 0 40px;
   }
 
   &__list {
     display: flex;
     gap: 22px;
+    justify-content: center;
 
-    @include mobile {
+    @include laptop-s {
+      justify-content: flex-start;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      padding-inline: fluid(100, 20);
+    }
+
+    @include mobile {
+      justify-content: flex-start;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-inline: fluid(20, 16);
     }
   }
 

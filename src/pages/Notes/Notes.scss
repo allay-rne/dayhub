@@ -12,6 +12,10 @@
     flex: 1 2;
     gap: 18px;
 
+    @include laptop-s {
+      flex-direction: column;
+    }
+
     @include mobile {
       flex-direction: column;
     }
